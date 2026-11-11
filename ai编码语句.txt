@@ -1,0 +1,142 @@
+ai编码语句
+
+请先问清楚所有细节再进行修改
+
+你可以阅读任何你所需要的文件作为参考依据，其中CONTEXT.md是项目的上下文文档
+
+同意上述方案，请以diff形式给我需要修改的代码，我手动修改，如果一轮对话输出不完，可以分多轮输出，直到输出完毕
+
+按照上面确认的方案执行代码修改，用+号表示当前文件中需要增加的代码行，-号表示当前文件中需要删除的代码行，如果一个文件中全是新增代码、前方就无需添加+号或者-号，css代码无需添加+号或者-号，我来手动修改代码，我手动修改，如果一轮对话输出不完，可以分多轮输出，直到输出完毕
+
+优雅编码原则：主流程每一行对应一个业务步骤，命名即意图，参数即充要信息。非业务复杂度封装消化，对外只暴露简单接口，固有复杂度保留不掩盖。尽可能少的使用中间变量转换，这要会提高阅读负担。
+
+对于封装的函数，仅限于函数返回值，其返回结构要在外面用@typedef起好名字，在函数的开头就把输出的结构骨架写出来，也就是定义一个变量，并通过/**@type给上类型标注*/，这样方便我掌握结构性细节，也方便ai阅读代码
+
+
+
+告诉我你的实现思路，并以diff的形式呈现要修改的代码，我手动来修改
+
+
+如果你理解了我的需求，你就先把你对我需求的理解复述给我，然后给我相应的方案，这个方案可以是你认为比我这里更好的实现方案，我在和你达成共识之后，你再给我相应的代码。你可以阅读任何你所需要的文件作为参考依据（简化：我们现在就重构方案达成一致，之后再根据方案重构项目，现在无需你提供具体的代码实现）
+
+如果一轮对话没法完整的将待修改代码呈现给我，就分批次给我，我说”继续“，你就给下一批次代码
+
+如果需要改动，你检查下其它文件，在其它地方是否也需要改动，避免一处改动造成其它地方的逻辑错误，最后用diff格式呈现，我来手动修改
+
+
+
+
+
+
+
+ai讲解
+
+这些文件内容是这节网课的课件和用到的代码文件以及课件，阅读这些文件，分析讲师讲了什么东西。因为我不喜欢那种看网课这种被动接收，更喜欢agent跟我的的了解程度来指导我学习的过程。我希望你能根据这些内容，一步步引导我去学习这其中的内容，直到我的理解和课件还有你对这些内容的理解达到一致。
+
+跟我讲解一下，你可以在当前的工作区的index.js中编写内容，并通过node让代码在终端输出内容。
+
+你可以在当前工作区的index.glsl中编写内容，我复制到shadertoy网站去查看效果
+
+
+讲解 arr.xxx() 方法，要求：
+1、用一句话说明它的核心价值（它存在的意义是什么）
+2、给一个生活中的比喻或画面，帮我建立直觉
+3、给出语法，参数用注释说明
+4、指出回调是否需要 return，以及 return 的内容决定了什么
+5、聊天框里用 ASCII 图示适当展示数组元素的流转过程（原数组 → 操作 → 结果），例子：
+[1,  2,  3,  4,  5 ]  原数组（不变）
+ ↓   ↓   ↓   ↓   ↓   每个元素被你 return 的值替换
+[2,  4,  6,  8,  10]  全新数组（等长）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+笔记相关
+
+数据笔记标题命名规范是"方法名 + 冒号 + 直观展示该方法处理数据后得到的结果形态"，让人看到标题就能立刻知道这个方法会产出什么。你想用同样的规范给这三个方法命名标题。
+
+
+
+
+
+
+
+
+
+新时代编码所在意的点：
+宏观层：系统思维与架构能力学习如何设计高内聚低耦合的系统学习不同架构模式（微服务、事件驱动、分层架构）的优缺点学习权衡：时间 vs 成本 vs 性能 vs 可维护性
+
+中观层：原理与核心概念学习框架背后的原理（React的Fiber、Vue的响应式）学习数据库索引的工作原理学习HTTP/2、HTTP/3的核心改进学习容器和虚拟化的区别知道“是什么”，更要知道“为什么”。
+
+微观层：调试与排错能力学习使用浏览器DevTools、Performance面板学习分析内存快照、CPU Profile学习看日志、查监控、定位慢查询这些是AI暂时帮不了的“手艺活”。
+
+横向层：AI工具本身学习如何写好Prompt（提示词工程）学习AI编程助手的最佳实践了解AI的边界和局限性
+
+原先的高级工程师所必会的：
+如何组织代码？如何拆分模块？如何保证可维护性、可扩展性？如何做Code Review、自动化测试、CI/CD？这些是高级工程师的必备技能。
+
+
+
+
+function mountComponent(vnode, container, anchor) {
+  const options = vnode.type
+  // ① 先把用户写的钩子从选项对象里「取出来」
+  const { render, data, beforeCreate, created,
+          beforeMount, mounted, beforeUpdate, updated } = options
+
+  beforeCreate && beforeCreate()          // ← 就是在这一行调用
+
+  const state = reactive(data())          // 初始化响应式数据（选项式 API）
+  const instance = { state, isMounted: false, subTree: null }
+  vnode.component = instance
+
+  created && created.call(state)          // ← 数据好了，DOM 还没，所以 created 能读数据
+
+  effect(() => {                          // 这个 effect 就是「更新引擎」
+    const subTree = render.call(state, state)
+    if (!instance.isMounted) {            // isMounted 是「首次 or 更新」的开关
+      beforeMount && beforeMount.call(state)
+      patch(null, subTree, container, anchor)   // 首次挂载：第一个参数 null
+      instance.isMounted = true
+      mounted && mounted.call(state)      // ← patch 之后才有 DOM，所以 mounted 能操作 DOM
+    } else {
+      beforeUpdate && beforeUpdate.call(state)
+      patch(instance.subTree, subTree, container, anchor)  // 更新：新旧子树 diff
+      updated && updated.call(state)
+    }
+    instance.subTree = subTree
+  }, { scheduler: queueJob })
+}
+
+以后一个复杂函数的流程图可以简化成这样：
+
+beforeCreate
+    ↓
+reactive(data())        ← 响应式数据初始化
+    ↓
+created
+    ↓
+  effect(() => {        ← 副作用/更新引擎（数据变化时自动重跑）
+      render()
+        ↓
+    [首次]  beforeMount → patch(null, subTree) → mounted
+    [更新]  beforeUpdate → patch(old, new)     → updated
+  })
+
+
+
+
+

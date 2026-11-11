@@ -1,0 +1,242 @@
+{
+  "main": {
+    "id": "75afe3db96f4d3d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "ffad53ebf87f47f6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ea5c4565efb588e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "html-css.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "html-css"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "df82076dda23b1ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "bde21fb2d746ebe2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80216bd47e6d023c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "5e5ba555ec39f3be",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "a995f483575aeedd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f85c6cfc6eae2acb",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba5d235d13ce0b98",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f6c29d200f92e7c1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "前端学习流程图.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "7afb8bc193a64140",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "前端学习流程图.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "e7e2b8f75971b63a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "704e44bfa16d48f0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "c341a911b12a8d47",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "html-css.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 331.1666259765625
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "ea5c4565efb588e6",
+  "lastOpenFiles": [
+    "typescript笔记.md",
+    "数据结构/GeoJSON.md",
+    "数据结构/assets/image-20261109193946594.png",
+    "数据结构/assets/image-20261109193610212.png",
+    "数据结构/assets/image-20261109193358157.png",
+    "数据结构/assets/image-20261109193103536.png",
+    "数据结构/assets/image-20261109192859165.png",
+    "数据结构/assets/image-20261109192839685.png",
+    "数据结构/assets/image-20261109192309204.png",
+    "数据结构/assets/image-20261109192300348.png",
+    "数据结构/assets/image-20261109172012967.png",
+    "数据结构/assets",
+    "html-css.md",
+    "数据结构/bim数据.md",
+    "具体功能/Typora图片/image-20261014043321182.png",
+    "node.js.md",
+    "web二维gis.md",
+    "skill.md",
+    "架构/可维护性.md",
+    "浏览器.md",
+    "设计模式.md",
+    "框架.md",
+    "前端技巧.md",
+    "C++.md",
+    "C++.txt",
+    "新建 文本文档.txt",
+    "前端学习流程图.canvas",
+    "未命名 1.base",
+    "未命名.base",
+    "工程化.md",
+    "未命名.canvas",
+    "2026-11-05.md",
+    "Next.js.md",
+    "1.md",
+    "未命名.md",
+    "cesium笔记.md",
+    "架构",
+    "Express.md",
+    "three.js笔记.md",
+    "webgl笔记.md",
+    "老笔记--不用了/vue.md",
+    "Vue.md",
+    "React.md",
+    "面试可能要问的.md",
+    "第三方图表库.pdf",
+    "具体功能/新建 文本文档.txt",
+    "具体功能/Typora图片",
+    "具体功能/web端文件的上传下载.txt"
+  ]
+}

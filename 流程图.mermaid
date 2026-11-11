@@ -1,0 +1,98 @@
+flowchart TD
+    START(["起点：会一点 HTML / CSS / JS"])
+
+    subgraph P1["① 地基 · 不依赖任何框架"]
+        A1["HTML 语义化 · CSS Flex / Grid"]
+        A2["DOM 操作与事件机制"]
+        A3["HTTP 基础 · DevTools 调试"]
+        A1 --> A2 --> A3
+    end
+
+    subgraph P2["② 语言层 · 所有框架共用"]
+        B1["JavaScript ES2024+<br/>模块 · Promise / async · 解构"]
+        B2["TypeScript<br/>类型标注 · 接口 · 泛型"]
+        B1 --> B2
+    end
+
+    subgraph P3["③ 工程化底座 · 换框架也不白学"]
+        C1["pnpm 包管理"]
+        C2["Vite 6 构建与热更新"]
+        C3["ESLint 9 Flat Config + Prettier"]
+        C1 --> C2 --> C3
+    end
+
+    PICK{"④ 选一条生态主线<br/>只选一条，不要横跳"}
+
+    subgraph P4R["React 路线"]
+        R1["React 19<br/>组件 · Hooks · 状态"]
+        R2["React Router 7"]
+        R3["Zustand 客户端状态"]
+        R1 --> R2 --> R3
+    end
+
+    subgraph P4V["Vue 路线"]
+        V1["Vue 3.5+<br/>SFC · 组合式 API · 响应式"]
+        V2["Vue Router"]
+        V3["Pinia 客户端状态"]
+        V1 --> V2 --> V3
+    end
+
+    subgraph P5["⑤ 框架不给、但每个项目都要"]
+        E1["服务端状态<br/>TanStack Query / SWR<br/>缓存 · 去重 · 重试"]
+        E2["样式与组件库<br/>Tailwind CSS 4<br/>+ shadcn/ui 或 Element Plus"]
+        E1 --> E2
+    end
+
+    M1(["里程碑 A：能独立交付一个 SPA"])
+
+    SSR{"⑥ 项目需要 SSR / SEO 吗"}
+    N1["Next.js App Router<br/>React 侧"]
+    N2["Nuxt 3 / 4<br/>Vue 侧"]
+    N3["Astro<br/>内容站 · 博客 · 官网"]
+    N4["继续留在 Vite SPA<br/>纯后台系统不需要元框架"]
+
+    subgraph P7["⑦ 质量与上线"]
+        H1["Vitest + Testing Library<br/>单元测试"]
+        H2["Playwright<br/>端到端测试"]
+        H3["Node.js 22+ 运行时<br/>Vercel / Docker 部署"]
+        H1 --> H2 --> H3
+    end
+
+    M2(["里程碑 B：能独立交付全栈应用并上线"])
+
+    DIR{"⑧ 分方向深耕<br/>挑 1～2 个即可"}
+    G1["跨端<br/>RN / Expo · Taro · uni-app<br/>Tauri 2 · Electron"]
+    G2["可视化 · 动画<br/>ECharts → D3 / AntV<br/>Three.js · Framer Motion / GSAP"]
+    G3["工程化平台<br/>Monorepo + Turborepo<br/>微前端 · Storybook · Changesets"]
+    G4["AI 集成<br/>Vercel AI SDK · MCP · LangChain.js"]
+    G5["富文本编辑器<br/>TipTap · Lexical · Monaco"]
+    G6["性能与底层<br/>Rspack / Rolldown · SWC<br/>WASM · Web Components"]
+
+    START --> P1 --> P2 --> P3 --> PICK
+    PICK -->|"大厂 · 外企 · 出海 · 想做全栈"| P4R
+    PICK -->|"国内中小厂 · 后台管理系统居多"| P4V
+    P4R --> P5
+    P4V --> P5
+    P5 --> M1 --> SSR
+    SSR -->|"要，React 侧"| N1
+    SSR -->|"要，Vue 侧"| N2
+    SSR -->|"内容站为主"| N3
+    SSR -->|"不需要"| N4
+    N1 --> P7
+    N2 --> P7
+    N3 --> P7
+    N4 --> P7
+    P7 --> M2 --> DIR
+    DIR --> G1
+    DIR --> G2
+    DIR --> G3
+    DIR --> G4
+    DIR --> G5
+    DIR --> G6
+
+    classDef stage fill:#e8f4ff,stroke:#2b6cb0,color:#1a365d
+    classDef branch fill:#fff4e5,stroke:#c05621,stroke-width:2px,color:#7b341e
+    classDef milestone fill:#e6ffed,stroke:#2f855a,stroke-width:2px,color:#22543d
+    class A1,A2,A3,B1,B2,C1,C2,C3,R1,R2,R3,V1,V2,V3,E1,E2,H1,H2,H3 stage
+    class PICK,SSR,DIR,N1,N2,N3,N4,G1,G2,G3,G4,G5,G6 branch
+    class START,M1,M2 milestone
