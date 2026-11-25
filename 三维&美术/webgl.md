@@ -41,13 +41,13 @@ webgl （web Graphics library）是一套由浏览器实现，面向JavaScript�
 
 绿色部分为开发者可以通过编程控制的部分：
 
-<img src="./Typora图片/image-20251017175342922.png" alt="image-20251017175342922" style="zoom:50%;" />
+<img src="./assets/image-20251017175342922.png" alt="image-20251017175342922" style="zoom:50%;" />
 
 
 
 片元着色器渲染过程
 
-<img src="./Typora图片/image-20251016182536139.png" alt="image-20251016182536139" style="zoom: 50%;" />
+<img src="./assets/image-20251016182536139.png" alt="image-20251016182536139" style="zoom: 50%;" />
 
 varying变量在计算线段上每个片元的颜色时
 
@@ -57,7 +57,7 @@ varying变量在计算线段上每个片元的颜色时
 
 可以得到如下图的插值, 每个片元的颜色不同, 逐渐变化
 
-![image-20251016182626519](./Typora图片/image-20251016182626519.png)
+![image-20251016182626519](./assets/image-20251016182626519.png)
 
 下面的 `插值渐变例子` 中就能看出，虽然仅仅是设置了三个顶点的颜色，但是需要得到一个渐变的三角形
 
@@ -148,7 +148,7 @@ void main() {
 
 
 
-<img src="./Typora图片/image-20251017171831000.png" alt="image-20251017171831000" style="zoom: 33%;" />
+<img src="./assets/image-20251017171831000.png" alt="image-20251017171831000" style="zoom: 33%;" />
 
 
 
@@ -196,13 +196,13 @@ void main() {
 
 经过正射投影矩阵映射后的坐标分量 w 不会改变，始终是1，所以在经过透视除法后物体的轮廓比例不会发生改变，没有进大远小的效果
 
-<img src="./Typora图片/正交投影.png" alt="正交投影" style="zoom:33%;" />
+<img src="./assets/正交投影.png" alt="正交投影" style="zoom:33%;" />
 
 透视投影
 
 透视投影将给定的平截头体范围映射到裁剪空间，除此之外它还会修改每个顶点坐标的 w 值，使得离人眼越远的物体坐标 w 值越大。因为相机是从正z看向负z的，所以只要z越小，w越大，等进行透视除法之后得到 NDC 坐标后，就能产生近大远小的效果了。
 
-<img src="./Typora图片/透视投影.png" alt="透视投影" style="zoom: 50%;" />
+<img src="./assets/透视投影.png" alt="透视投影" style="zoom: 50%;" />
 
 
 
@@ -265,7 +265,7 @@ void main() {
 
  例子： NDC 坐标 (0,0)，在你设置的视口 gl.viewport(0, 0, 500, 300) 下会映射到窗口坐标 (250, 150)
 
-<img src="./Typora图片/image-20251017172302216.png" alt="image-20251017172302216" style="zoom:50%;" />
+<img src="./assets/image-20251017172302216.png" alt="image-20251017172302216" style="zoom:50%;" />
 
 
 
@@ -338,7 +338,7 @@ void main(){
 
 `绘制三角形的数量 = 顶点数 / 3`。
 
-![image-20251019215649444](./Typora图片/image-20251019215649444.png)
+![image-20251019215649444](./assets/image-20251019215649444.png)
 
 
 
@@ -348,13 +348,13 @@ void main(){
 
 `绘制三角形的数量 = 顶点数 - 2`
 
-![image-20251019220015306](./Typora图片/image-20251019220015306.png)
+![image-20251019220015306](./assets/image-20251019220015306.png)
 
 
 
 三角扇（TRIANGLE_FAN）
 
-![image-20251019220027273](./Typora图片/image-20251019220027273.png)
+![image-20251019220027273](./assets/image-20251019220027273.png)
 
 可以看出，三角扇的绘制方式是以第一个顶点作为所有三角形的顶点进行绘制的。采用三角扇绘制方式所能绘制的三角形的数量和顶点个数的关系如下：
 
@@ -368,7 +368,7 @@ void main(){
 * LINE_STRIP：带状线段。
 * LINE_LOOP：环状线段。
 
-![image-20251019225704436](./Typora图片/image-20251019225704436.png)
+![image-20251019225704436](./assets/image-20251019225704436.png)
 
 LINES 图元称为基本线段图元，绘制每一条线段都需要明确指定绘制每一条线段的两个端点
 
@@ -393,11 +393,11 @@ LINE_LOOP 除了包含 LINE_STRIP 的绘制特性，还会将线段的终点和�
 
 纹理坐标系统
 
-<img src="./Typora图片/image-20251016214951116.png" alt="image-20251016214951116" style="zoom:50%;" />
+<img src="./assets/image-20251016214951116.png" alt="image-20251016214951116" style="zoom:50%;" />
 
 将纹理坐标系（UV）下的坐标转换为 WebGL坐标系 下的坐标的过程叫 UV映射
 
-<img src="./Typora图片/image-20251016215240069.png" alt="image-20251016215240069" style="zoom:50%;" />
+<img src="./assets/image-20251016215240069.png" alt="image-20251016215240069" style="zoom:50%;" />
 
 
 
@@ -452,6 +452,7 @@ const indices = new Uint16Array([
 光照前提下，颜色在计算机中的表示
 
 
+
 渲染时的“物体颜色”本质上表示“物体能反射光的比例”（每个通道 R/G/B 的反射系数）
 
 引入光源后：进入眼睛的最终颜色 = 光源的颜色分量 x 物体的颜色分量（逐通道乘）
@@ -467,6 +468,7 @@ vec3 result = light * color;   // = (0,0,0) → 黑
 ```
 
 <hr>
+
 
 
 为什么需要环境光
@@ -762,7 +764,7 @@ gl.useProgram(program)
 - 场景分两端：JS 在 CPU 内存里运行，着色器源码编译后在 GPU 显存执行。二者不能直接共享变量。
 - program（WebGLProgram）的作用：把编译好的顶点/片元着色器“链接”为一个可执行的 GPU 程序，并在链接时为 attribute/ uniform/varying 等接口分配或确定索引（位置）。这就是“中间人”。
 
-<img src="./Typora图片/image-20251015195341876.png" alt="image-20251015195341876" style="zoom:50%;" />
+<img src="./assets/image-20251015195341876.png" alt="image-20251015195341876" style="zoom:50%;" />
 
 - 具体映射流程：
   - gl.linkProgram 将两段着色器的接口匹配并确定位置（queryable）。
@@ -893,6 +895,7 @@ gl.enableVertexAttribArray(a_Color) // 启用顶点属性数组
 
 
 <hr>
+
 
 
 ##### drawElements 绘制
@@ -1155,7 +1158,7 @@ pnpm dev 启动项目测试效果
 
 canvas画布被设置背景色
 
-<img src="./Typora图片/image-20251015115107467.png" alt="image-20251015115107467" style="zoom: 25%;" />
+<img src="./assets/image-20251015115107467.png" alt="image-20251015115107467" style="zoom: 25%;" />
 
 
 
@@ -1169,7 +1172,7 @@ canvas画布被设置背景色
 
 WebGL编程的本质
 
-<img src="./Typora图片/image-20251015165042365.png" alt="image-20251015165042365" style="zoom: 67%;" />
+<img src="./assets/image-20251015165042365.png" alt="image-20251015165042365" style="zoom: 67%;" />
 
 1. **WebGL API：着色器源码**
    - 顶点着色器源码
@@ -1326,7 +1329,7 @@ gl.drawArrays(gl.POINTS, 0, 1)
 
 ##### 效果
 
-<img src="./Typora图片/image-20251015171531828.png" alt="image-20251015171531828" style="zoom:33%;" />
+<img src="./assets/image-20251015171531828.png" alt="image-20251015171531828" style="zoom:33%;" />
 
 
 
@@ -1464,7 +1467,7 @@ gl.drawArrays(gl.POINTS, 0, 1)
 
 ##### 效果
 
-<img src="./Typora图片/GIF 2025-10-15 19-51-12.gif" alt="GIF 2025-10-15 19-51-12" style="zoom:33%;" />
+<img src="./assets/GIF 2025-10-15 19-51-12.gif" alt="GIF 2025-10-15 19-51-12" style="zoom:33%;" />
 
 
 
@@ -1606,7 +1609,7 @@ canvas.addEventListener('click', e => {
 
 ##### 效果
 
-<img src="./Typora图片/GIF 2025-10-15 20-55-55.gif" alt="GIF 2025-10-15 20-55-55" style="zoom:33%;" />
+<img src="./assets/GIF 2025-10-15 20-55-55.gif" alt="GIF 2025-10-15 20-55-55" style="zoom:33%;" />
 
 
 
@@ -1750,7 +1753,7 @@ canvas.addEventListener('click', e => {
 
 ##### 效果
 
-<img src="./Typora图片/不同颜色.gif" alt="不同颜色" style="zoom:33%;" />
+<img src="./assets/不同颜色.gif" alt="不同颜色" style="zoom:33%;" />
 
 
 
@@ -1841,7 +1844,7 @@ gl.drawArrays(gl.POINTS, 0, 4)
 
 ##### 效果
 
-<img src="./Typora图片/webgl绘制模式.gif" alt="webgl绘制模式" style="zoom:67%;" />
+<img src="./assets/webgl绘制模式.gif" alt="webgl绘制模式" style="zoom:67%;" />
 
 
 
@@ -1931,7 +1934,7 @@ gl.drawArrays(gl.POINTS, 0, 4)
 
 ##### 效果
 
-<img src="./Typora图片/image-20251016093453525.png" alt="image-20251016093453525" style="zoom:67%;" />
+<img src="./assets/image-20251016093453525.png" alt="image-20251016093453525" style="zoom:67%;" />
 
 
 
@@ -2038,7 +2041,7 @@ gl.drawArrays(gl.TRIANGLE_FAN, 0, 3)
 
 #### 效果
 
-<img src="./Typora图片/image-20251016181606298.png" alt="image-20251016181606298" style="zoom:33%;" />
+<img src="./assets/image-20251016181606298.png" alt="image-20251016181606298" style="zoom:33%;" />
 
 ### 画布颜色插值
 
@@ -2117,7 +2120,7 @@ gl.enableVertexAttribArray(a_Position)
 
 当矩形移动是，范围内的片元就会被附着上本来的颜色
 
-<img src="./Typora图片/GIF 2025-10-16 18-24-00.gif" alt="GIF 2025-10-16 18-24-00" style="zoom:50%;" />
+<img src="./assets/GIF 2025-10-16 18-24-00.gif" alt="GIF 2025-10-16 18-24-00" style="zoom:50%;" />
 
 
 
@@ -2288,7 +2291,7 @@ void main() {
 
 #### 效果
 
-<img src="./Typora图片/GIF 2025-10-16 18-24-00-1760611504903-2.gif" alt="GIF 2025-10-16 18-24-00" style="zoom:50%;" />
+<img src="./assets/GIF 2025-10-16 18-24-00-1760611504903-2.gif" alt="GIF 2025-10-16 18-24-00" style="zoom:50%;" />
 
 
 
@@ -2557,7 +2560,7 @@ gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0)
 
 #### 效果
 
-<img src="./Typora图片/image-20251020111857665.png" alt="image-20251020111857665" style="zoom: 50%;" />
+<img src="./assets/image-20251020111857665.png" alt="image-20251020111857665" style="zoom: 50%;" />
 
 
 
@@ -2672,7 +2675,7 @@ img.onload = () => {
 
 ```
 
-<img src="./Typora图片/image-20251020151740040.png" alt="image-20251020151740040" style="zoom:33%;" />
+<img src="./assets/image-20251020151740040.png" alt="image-20251020151740040" style="zoom:33%;" />
 
 
 
@@ -3013,7 +3016,7 @@ gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0)
 
 #### 效果
 
-<img src="./Typora图片/image-20251020205347757.png" alt="image-20251020205347757" style="zoom: 33%;" />
+<img src="./assets/image-20251020205347757.png" alt="image-20251020205347757" style="zoom: 33%;" />
 
 
 
@@ -3179,15 +3182,15 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
-<img src="./Typora图片/image-20260820152557223.png" alt="image-20260820152557223" style="zoom: 67%;" />
+<img src="./assets/image-20260820152557223.png" alt="image-20260820152557223" style="zoom: 67%;" />
 
 把 `step` 换成 `smoothstep(0.45, 0.55, uv.x)` 再跑一次 —— 硬边变成渐变。这就是抗锯齿的伏笔。
 
-<img src="./Typora图片/image-20260820152639269.png" alt="image-20260820152639269" style="zoom:67%;" />
+<img src="./assets/image-20260820152639269.png" alt="image-20260820152639269" style="zoom:67%;" />
 
 step和smoothstep
 
-![step和smoothstep的区别](./Typora图片/step和smoothstep的区别.png)
+![step和smoothstep的区别](./assets/step和smoothstep的区别.png)
 
 
 
@@ -3359,7 +3362,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 ```
 
 > 在物理 GPU 上，并不是真正为每个像素单独分配一个独立的核心。通常是以 **warp / wavefront（32 或 64 个线程一组）** 为单位并行执行，组内线程共享指令流。但从**编程模型**角度，把它们看作一个个独立的线程是允许的，也是着色器语言的设计初衷。
->
 
 
 
@@ -3429,7 +3431,7 @@ Vertex → Assembly → Geometry → Rasterization → **Fragment** → Blending
 - 所以 Shadertoy 里**不存在"物体"**。没有球体、没有立方体，只有一块平面画布。
 - 看到的所有 3D 效果，都是靠**数学在每个像素上现算出来的**（ Ray Marching / SDF）。
 
-![image-20260307115640066](./Typora图片/image-20260307115640066.png)
+![image-20260307115640066](./assets/image-20260307115640066.png)
 
 
 
@@ -3437,7 +3439,7 @@ Vertex → Assembly → Geometry → Rasterization → **Fragment** → Blending
 
 插值：顶点定义角，GPU 自动填中间。但在 Shadertoy 里这一步跟开发者无关，因为对于开发者来说，"三角形"永远是整个屏幕。
 
-![image-20260307115727487](./Typora图片/image-20260307115727487.png)
+![image-20260307115727487](./assets/image-20260307115727487.png)
 
 
 
@@ -3456,7 +3458,7 @@ Vertex → Assembly → Geometry → Rasterization → **Fragment** → Blending
 
 ③fps、⑤录制、⑥多脚本 Buffer、⑦全局变量列表、⑨纹理通道、⑩字号 —— 现在都可以忽略。
 
-![image-20260819203729801](./Typora图片/image-20260819203729801.png)
+![image-20260819203729801](./assets/image-20260819203729801.png)
 
 
 
@@ -3671,7 +3673,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 fragColor和fragCoord是Shadertoy/GLSL规定的函数签名，显卡驱动认识这个接口
 ```
 
-![image-20260307152209167](./Typora图片/image-20260307152209167.png)
+![image-20260307152209167](./assets/image-20260307152209167.png)
 
 
 
@@ -3718,7 +3720,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 底部由黑变红，证明x坐标从左到右是递增的
 
-![image-20260307155402785](./Typora图片/image-20260307155402785.png)
+![image-20260307155402785](./assets/image-20260307155402785.png)
 
 
 
@@ -3737,7 +3739,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 ③fps、⑤录制、⑥多脚本 Buffer、⑦全局变量列表、⑨纹理通道、⑩字号 —— 现在都可以忽略。
 
-<img src="./Typora图片/image-20260819203729801.png" alt="image-20260819203729801" style="zoom:67%;" />
+<img src="./assets/image-20260819203729801.png" alt="image-20260819203729801" style="zoom:67%;" />
 
 
 
@@ -3892,7 +3894,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
-<img src="./Typora图片/image-20260820154515066.png" alt="image-20260820154515066" style="zoom:67%;" />
+<img src="./assets/image-20260820154515066.png" alt="image-20260820154515066" style="zoom:67%;" />
 
 中心是黑的（负数被 clamp 到 0），向外越来越亮。
 
@@ -3950,7 +3952,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
-<img src="./Typora图片/image-20260820161717010.png" alt="image-20260820161717010" style="zoom:67%;" />
+<img src="./assets/image-20260820161717010.png" alt="image-20260820161717010" style="zoom:67%;" />
 
 
 
@@ -4027,7 +4029,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
-<img src="./Typora图片/GIF 2026-08-20 16-24-34.gif" alt="GIF 2026-08-20 16-24-34" style="zoom:80%;" />
+<img src="./assets/GIF 2026-08-20 16-24-34.gif" alt="GIF 2026-08-20 16-24-34" style="zoom:80%;" />
 
 
 
@@ -4061,7 +4063,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 ### SDF画圆
 
-![image-20260307165101854](./Typora图片/image-20260307165101854.png)
+![image-20260307165101854](./assets/image-20260307165101854.png)
 
 ```glsl
 在Shadertoy中，可以利用方程（ x^{2}+y^{2}-4=0 ）的左侧来画一个圆，创建一个名为sdfCircle的函数，该函数返回 XY 坐标处每个像素的颜色，如果像素在圆的内部，则返回蓝色，如果在圆的外部，则返回白色，圆心位于原点，半径为0.2
@@ -4089,7 +4091,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 ```
 
-![image-20260307173439567](./Typora图片/image-20260307173439567.png)
+![image-20260307173439567](./assets/image-20260307173439567.png)
 
 
 
@@ -4101,7 +4103,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 uv.x *= iResolution.x / iResolution.y; 
 ```
 
-![image-20260307173450726](./Typora图片/image-20260307173450726.png)
+![image-20260307173450726](./assets/image-20260307173450726.png)
 
 
 
@@ -4199,7 +4201,7 @@ uv.x *= iResolution.x / iResolution.y;
 
 #### 移动圆圈
 
-![image-20260309093741423](./Typora图片/image-20260309093741423.png)
+![image-20260309093741423](./assets/image-20260309093741423.png)
 
 ```js
 vec3 sdfCircle(vec2 uv, float r, vec2 offset) {
@@ -4224,7 +4226,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 ```
 
-![image-20260309101124377](./Typora图片/image-20260309101124377.png)
+![image-20260309101124377](./assets/image-20260309101124377.png)
 
 
 
@@ -4240,7 +4242,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 | sin(θ)   cos(θ) |
 ```
 
-![image-20260309103056080](./Typora图片/image-20260309103056080.png)
+![image-20260309103056080](./assets/image-20260309103056080.png)
 
 
 
@@ -4326,7 +4328,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 ```
 
-![image-20260309145043219](./Typora图片/image-20260309145043219.png)
+![image-20260309145043219](./assets/image-20260309145043219.png)
 
 
 
@@ -4352,7 +4354,7 @@ vec3 drawScene(vec2 uv) {
 }
 ```
 
-![image-20260309152239675](./Typora图片/image-20260309152239675.png)
+![image-20260309152239675](./assets/image-20260309152239675.png)
 
 
 
@@ -4370,7 +4372,7 @@ vec3 drawScene(vec2 uv) {
 }
 ```
 
-![image-20260309152357068](./Typora图片/image-20260309152357068.png)
+![image-20260309152357068](./assets/image-20260309152357068.png)
 
 
 
@@ -4388,7 +4390,7 @@ vec3 drawScene(vec2 uv) {
 }
 ```
 
-![image-20260309152535097](./Typora图片/image-20260309152535097.png)
+![image-20260309152535097](./assets/image-20260309152535097.png)
 
 
 
@@ -4407,7 +4409,7 @@ vec3 drawScene(vec2 uv) {
 
 XOR = **并集** 再减去 **交集**，即 (d1∪d2)∖(d1∩d2) 。
 
-![image-20260309153045000](./Typora图片/image-20260309153045000.png)
+![image-20260309153045000](./assets/image-20260309153045000.png)
 
 
 
@@ -4427,7 +4429,7 @@ XOR = **并集** 再减去 **交集**，即 (d1∪d2)∖(d1∩d2) 。
 
 图中的q表示为p(position)经过数学操作映射成的局部坐标
 
-<img src="./Typora图片/svgviewer-png-output (7).png" alt="svgviewer-png-output (7)" style="zoom:150%;" />
+<img src="./assets/svgviewer-png-output (7).png" alt="svgviewer-png-output (7)" style="zoom:150%;" />
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="620" height="370" viewBox="0 0 620 370">
@@ -4551,11 +4553,11 @@ vec3 drawScene(vec2 uv) {
 }
 ```
 
-![image-20260309164014001](./Typora图片/image-20260309164014001.png)
+![image-20260309164014001](./assets/image-20260309164014001.png)
 
 实际上：
 
-<img src="./Typora图片/svgviewer-png-output (6).png" alt="svgviewer-png-output (6)" style="zoom: 20%;" />
+<img src="./assets/svgviewer-png-output (6).png" alt="svgviewer-png-output (6)" style="zoom: 20%;" />
 
 
 
@@ -4587,7 +4589,7 @@ float opSymXY(vec2 p, float r) {
 }
 ```
 
-![image-20260309164954282](./Typora图片/image-20260309164954282.png)
+![image-20260309164954282](./assets/image-20260309164954282.png)
 
 
 
@@ -4631,9 +4633,9 @@ q = mod(p+0.5c,c)−0.5c
 
 这里假设c=10，一个区间在-5到5之间循环的函数
 
-![image-20260309172853939](./Typora图片/image-20260309172853939.png)
+![image-20260309172853939](./assets/image-20260309172853939.png)
 
-![image-20260309172047824](./Typora图片/image-20260309172047824.png)
+![image-20260309172047824](./assets/image-20260309172047824.png)
 
 
 
@@ -4669,9 +4671,9 @@ p.y同理
 函数一维效果如下图：
 ```
 
-![image-20260309192201768](./Typora图片/image-20260309192201768.png)
+![image-20260309192201768](./assets/image-20260309192201768.png)
 
-![image-20260309192544315](./Typora图片/image-20260309192544315.png)
+![image-20260309192544315](./assets/image-20260309192544315.png)
 
 
 
@@ -4706,9 +4708,9 @@ opDisplace里面的d2值，在uv.x为负的的区域，sin(s * uv.x * 1.8)也为
 此时uv坐标的范围：[-0.5, 0.5]
 ```
 
-![image-20260309195052582](./Typora图片/image-20260309195052582.png)
+![image-20260309195052582](./assets/image-20260309195052582.png)
 
-![image-20260309195101970](./Typora图片/image-20260309195101970.png)
+![image-20260309195101970](./assets/image-20260309195101970.png)
 
 
 
@@ -4764,7 +4766,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 }
 ```
 
-![image-20260309201100383](./Typora图片/image-20260309201100383.png)
+![image-20260309201100383](./assets/image-20260309201100383.png)
 
 还可以使用 **smoothstep** 来创建自发光对象或霓虹灯发光效果
 
@@ -4795,7 +4797,7 @@ vec2 rayDirection = vec2(1, 0);
 作为约定，这里使用归一化向量来表示方向。所以这里将使用的一些算法只关心光线的方向，而不关心光线的大小（或长度）。不在乎光线有多长。
 ```
 
-![image-20260310090921740](./Typora图片/image-20260310090921740.png)
+![image-20260310090921740](./assets/image-20260310090921740.png)
 
 
 
@@ -4812,7 +4814,7 @@ x 轴为红色，y 轴为绿色，z 轴为蓝色。这是有意为之的
 阅读其他人的代码或在线阅读其他教程时，有时会看到此约定沿 z 轴反转。当 z 轴远离您时，它们可能会使 z 轴变为正值，当 z 轴靠近您时，z 轴变为负值，但 x 轴和 y 轴保持不变。这称为左手定则
 ```
 
-![image-20260310092418398](./Typora图片/image-20260310092418398.png)
+![image-20260310092418398](./assets/image-20260310092418398.png)
 
 
 
@@ -4828,7 +4830,7 @@ x 轴为红色，y 轴为绿色，z 轴为蓝色。这是有意为之的
 通常使用的是“向后 backward” 模拟，其中光线是从相机或 “眼睛” 射出的。逆向工作！光通常来自太阳等光源，从一堆物体上反射，然后照射到我们的相机上。相反，我们的相机将向许多不同的方向发射光线。这些光线将从场景中的物体（包括地板等表面）反弹，其中一些光线会照射到光源上。如果光线从表面反弹并击中物体而不是光源，那么它被认为是“阴影光线”，并告诉我们应该绘制一个深色像素来表示阴影。（光线被另一个物体拦截，无法到达光源，表明这一块的光源被遮挡，没有直接光，此物体处在另一个物体投下的阴影中）
 ```
 
-<img src="./Typora图片/image-20260310094300614.png" alt="image-20260310094300614" style="zoom:50%;" />
+<img src="./assets/image-20260310094300614.png" alt="image-20260310094300614" style="zoom:50%;" />
 
 ```glsl
 上图中因为相机从不同的方向发射光线，至于光线数量，可以画布中的每个像素都对应一条光线。所以可以使用Shadertoy画布中每个像素的坐标来生成光线，每个像素在 x 轴和 y 轴上都有一个坐标，z分量就如上所说，正向指向屏幕外。
@@ -4860,11 +4862,11 @@ x 轴为红色，y 轴为绿色，z 轴为蓝色。这是有意为之的
 
 创建一个简单的摄像机，并在布置一个球体在 Shadertoy 画布中模拟 3D 场景
 
-![image-20260310110255159](./Typora图片/image-20260310110255159.png)
+![image-20260310110255159](./assets/image-20260310110255159.png)
 
 上图显示了在 Shadertoy 中创建的 3D 场景的侧视图。未显示 x 轴，因为它指向查看器。摄像机将被视为一个坐标为 （0， 0， 5） 的点，这意味着它沿 z 轴距离画布 5 个单位。这里还是会重新映射 UV 坐标，使原点位于画布的中心。
 
-![image-20260310110359950](./Typora图片/image-20260310110359950.png)
+![image-20260310110359950](./assets/image-20260310110359950.png)
 
 以 x 轴（红色）和 y 轴（绿色）表示从摄像机的视角来看的画布。
 
@@ -4955,7 +4957,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 会看到一个球体的图像。它看起来像一个圆圈，但它绝对是一个球体！
 
-![image-20260310110605157](./Typora图片/image-20260310110605157.png)
+![image-20260310110605157](./assets/image-20260310110605157.png)
 
 
 
@@ -4963,9 +4965,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 `vec3 ro = vec3(0, 0, 3);`
 
-![image-20260310110730928](./Typora图片/image-20260310110730928.png)
+![image-20260310110730928](./assets/image-20260310110730928.png)
 
-![image-20260310110742512](./Typora图片/image-20260310110742512.png)
+![image-20260310110742512](./assets/image-20260310110742512.png)
 
 
 
@@ -4986,7 +4988,7 @@ rd = normalize( (uv.x, uv.y, 0) - (0, 0, 5) )
    = normalize( vec3(uv, -5) )
 ```
 
-<img src="./Typora图片/image-20260310094300614.png" alt="image-20260310094300614" style="zoom:50%;" />
+<img src="./assets/image-20260310094300614.png" alt="image-20260310094300614" style="zoom:50%;" />
 
 ```glsl
 代码中实际所使用的方式：
@@ -5021,9 +5023,9 @@ normalize(vec3(uv, -1)) 是 Shadertoy 社区的标准惯用写法，把虚拟画
 虚拟画布就相当于近裁剪面，角度fov可以等同于由相机和虚拟画布的上下两边界的夹角，虚拟画布距离相机越远，fov角度越小
 ```
 
-<img src="./Typora图片/透视投影.png" alt="透视投影" style="zoom: 50%;" />
+<img src="./assets/透视投影.png" alt="透视投影" style="zoom: 50%;" />
 
-![svgviewer-png-output (1)](./Typora图片/svgviewer-png-output (1).png)
+![svgviewer-png-output (./../../开发/Typora图片/svgviewer-png-output (1).png)](./Typora图片/svgviewer-png-output (1).png)
 
 
 
@@ -5041,9 +5043,9 @@ normalize(vec3(uv, -1)) 是 Shadertoy 社区的标准惯用写法，把虚拟画
 
 为了使这个形状看起来更像一个球体，需要添加光照。在现实世界中，光线会沿随机方向从对象上散射。
 
-<img src="./Typora图片/image-20260310173253407.png" alt="image-20260310173253407" style="zoom:50%;" />
+<img src="./assets/image-20260310173253407.png" alt="image-20260310173253407" style="zoom:50%;" />
 
-<img src="./Typora图片/image-20260310173306130.png" alt="image-20260310173306130" style="zoom:67%;" />
+<img src="./assets/image-20260310173306130.png" alt="image-20260310173306130" style="zoom:67%;" />
 
 图中的黑色箭头表示球体的一些表面法线。如果表面法线指向光源，则球体上的该点看起来比球体的其余部分更亮。如果表面法线完全远离光源，则球体的该部分将显得更暗。
 
@@ -5065,7 +5067,7 @@ vec3 diffuseReflection = dot(normal, lightDirection);
 给定一个表面 f（x，y，z），沿该表面的梯度将具有以下方程：
 ```
 
-![image-20260310173400603](./Typora图片/image-20260310173400603.png)
+![image-20260310173400603](./assets/image-20260310173400603.png)
 
 
 
@@ -5154,7 +5156,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 float dif = clamp(dot(normal, lightDirection), 0.0, 1.0);
 ```
 
-![image-20260310173645247](./Typora图片/image-20260310173645247.png)
+![image-20260310173645247](./assets/image-20260310173645247.png)
 
 
 
@@ -5164,7 +5166,7 @@ float dif = clamp(dot(normal, lightDirection), 0.0, 1.0);
 float dif = clamp(dot(normal, lightDirection), 0.3, 1.0);
 ```
 
-![image-20260310173833507](./Typora图片/image-20260310173833507.png)
+![image-20260310173833507](./assets/image-20260310173833507.png)
 
 
 
@@ -5300,7 +5302,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 ```
 
-![image-20260310204122223](./Typora图片/image-20260310204122223.png)
+![image-20260310204122223](./assets/image-20260310204122223.png)
 
 
 
@@ -5320,7 +5322,7 @@ float sdFloor(vec3 p) {
 
 p点是光线与物体的交点坐标，也可以是光线当前的步进点，只有穿越下半像素的光线才可能让p点y分量为负值，让sdFloor返回值值小于零，判定在地板内
 
-![svgviewer-png-output (3)](./Typora图片/svgviewer-png-output (3).png)
+![svgviewer-png-output (./../../开发/Typora图片/svgviewer-png-output (3).png)](./Typora图片/svgviewer-png-output (3).png)
 
 
 
@@ -5432,7 +5434,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 ```
 
-![image-20260310205623345](./Typora图片/image-20260310205623345.png)
+![image-20260310205623345](./assets/image-20260310205623345.png)
 
 
 

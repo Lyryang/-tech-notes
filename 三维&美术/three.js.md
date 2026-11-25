@@ -171,7 +171,7 @@ animate();
 
 > 这一段就是 three.js 的“Hello World 模板”，新功能一律往这个基础上加。
 
-<img src="./Typora图片/image-20251201104713807.png" alt="image-20251201104713807" style="zoom: 25%;" />
+<img src="./assets/image-20251201104713807.png" alt="image-20251201104713807" style="zoom: 25%;" />
 
 
 
@@ -270,14 +270,13 @@ CIE (国际照明委员会) 在 1931 年制定了标准色度图，它定义了�
 因为微软的主要倡议，使得 sRGB 成为默认颜色空间（任何具有类似计算机功能的设备都使用 sRGB），但是，它仅覆盖CIE XYZ色彩空间的约30%。
 ```
 
-<img src="./Typora图片/色彩空间.png" alt="色彩空间" style="zoom:50%;" />
+<img src="./assets/色彩空间.png" alt="色彩空间" style="zoom:50%;" />
 
 
 
 #### HDR 、LDR
 
 ```
-
 
 Dynamic Range（动态范围）=最高亮度/最低亮度
 HDR= High Dynamic Range
@@ -299,11 +298,11 @@ LDR = Low Dynamic Range
 
 ```
 
-![image-20260206153720986](./Typora图片/image-20260206153720986.png)
+![image-20260206153720986](./assets/image-20260206153720986.png)
 
 泛光效果
 
-<img src="./Typora图片/image-20260206153927818.png" alt="image-20260206153927818" style="zoom:50%;" />
+<img src="./assets/image-20260206153927818.png" alt="image-20260206153927818" style="zoom:50%;" />
 
 
 
@@ -346,7 +345,7 @@ renderer.setSize(1920, 1080, false);
 
 下面是输出画布尺寸不等同于浏览器窗口大小的情况
 
-![image-20260206141518971](./Typora图片/image-20260206141518971.png)
+![image-20260206141518971](./assets/image-20260206141518971.png)
 
 
 
@@ -372,18 +371,17 @@ renderer.setPixelRatio(0.5);
 
 0.5的像素比
 
-<img src="./Typora图片/image-20260206141625876.png" alt="image-20260206141625876" style="zoom:50%;" />
+<img src="./assets/image-20260206141625876.png" alt="image-20260206141625876" style="zoom:50%;" />
 
 像素比为3
 
-<img src="./Typora图片/image-20260206141645094.png" alt="image-20260206141645094" style="zoom:50%;" />
+<img src="./assets/image-20260206141645094.png" alt="image-20260206141645094" style="zoom:50%;" />
 
 
 
 #### toneMapping（色调映射）
 
 ```js
-
 作用：将高动态范围(HDR)的光照数据映射到显示器可显示的低动态范围(LDR)
 
 通俗理解：就像拍照时的"HDR模式"，让亮部不过曝、暗部不死黑
@@ -423,11 +421,11 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
 NoToneMapping
 
-<img src="./Typora图片/image-20260206145807365.png" alt="image-20260206145807365" style="zoom: 33%;" />
+<img src="./assets/image-20260206145807365.png" alt="image-20260206145807365" style="zoom: 33%;" />
 
 ACESFilmicToneMapping
 
-<img src="./Typora图片/image-20260206145840900.png" alt="image-20260206145840900" style="zoom:33%;" />
+<img src="./assets/image-20260206145840900.png" alt="image-20260206145840900" style="zoom:33%;" />
 
 
 
@@ -454,7 +452,6 @@ renderer.toneMappingExposure = 1.0;
 #### outputColorSpace（输出色彩空间）
 
 ```js
-
 作用：定义渲染结果的色彩编码方式
 
 renderer.outputColorSpace = THREE.SRGBColorSpace; 
@@ -478,11 +475,11 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 LinearSRGBColorSpace
 
-<img src="./Typora图片/image-20260206150846345.png" alt="image-20260206150846345" style="zoom:67%;" />
+<img src="./assets/image-20260206150846345.png" alt="image-20260206150846345" style="zoom:67%;" />
 
 SRGBColorSpace,明显更加鲜艳
 
-<img src="./Typora图片/image-20260206150816765.png" alt="image-20260206150816765" style="zoom:67%;" />
+<img src="./assets/image-20260206150816765.png" alt="image-20260206150816765" style="zoom:67%;" />
 
 
 
@@ -516,15 +513,15 @@ renderer.shadowMap.type = THREE.PCFShadowMap
 
 BasicShadowMap
 
-<img src="./Typora图片/image-20260206154657940.png" alt="image-20260206154657940" style="zoom:50%;" />
+<img src="./assets/image-20260206154657940.png" alt="image-20260206154657940" style="zoom:50%;" />
 
 PCFShadowMap
 
-<img src="./Typora图片/image-20260206154718131.png" alt="image-20260206154718131" style="zoom:50%;" />
+<img src="./assets/image-20260206154718131.png" alt="image-20260206154718131" style="zoom:50%;" />
 
 VSMShadowMap
 
-<img src="./Typora图片/image-20260206154738797.png" alt="image-20260206154738797" style="zoom:50%;" />
+<img src="./assets/image-20260206154738797.png" alt="image-20260206154738797" style="zoom:50%;" />
 
 
 
@@ -670,19 +667,19 @@ new PerspectiveCamera( fov : number, aspect : number, near : number, far : numbe
 
 调试位置
 
-![screenshots](./Typora图片/screenshots-1775721252215-1.gif)
+![screenshots](./assets/screenshots-1775721252215-1.gif)
 
 
 
 调试旋转角度
 
-![screenshots](./Typora图片/screenshots-1775721485627-3.gif)
+![screenshots](./assets/screenshots-1775721485627-3.gif)
 
 
 
 调试投影参数
 
-![screenshots](./Typora图片/screenshots-1775721622502-5.gif)
+![screenshots](./assets/screenshots-1775721622502-5.gif)
 
 
 
@@ -1007,7 +1004,7 @@ gui.add(guiParams, 'roll', -180, 180, 1).name('Roll (°)').onChange(applyVirtual
 
 #### 视锥体示意图
 
-![视锥体](./Typora图片/视锥体.png)
+![视锥体](./assets/视锥体.png)
 
 
 
@@ -1098,9 +1095,9 @@ gui.add(pCamera.position, 'z', -20, 20, 0.1).name('相机Z轴位置').onChange((
 });
 ```
 
-![image-20251011205524570](./Typora图片/image-20251011205524570.png)
+![image-20251011205524570](./assets/image-20251011205524570.png)
 
-![image-20251011205837382](./Typora图片/image-20251011205837382.png)
+![image-20251011205837382](./assets/image-20251011205837382.png)
 
 
 
@@ -1171,7 +1168,7 @@ renderer.renderLoop(() => {
 
 
 
-![image-20251011212709789](./Typora图片/image-20251011212709789.png)
+![image-20251011212709789](./assets/image-20251011212709789.png)
 
 
 
@@ -1217,7 +1214,7 @@ scene.add(mesh);   // 只是把物体"登记"进去
 scene.add(light);  // 纯粹的数据结构，不涉及任何绘制
 ```
 
-![image-20260206113957296](./Typora图片/image-20260206113957296.png)
+![image-20260206113957296](./assets/image-20260206113957296.png)
 
 
 
@@ -1281,7 +1278,7 @@ const mesh = scene.getObjectByProperty('name', 'ground');
 const obj = scene.getObjectByProperty('customId', 42);
 ```
 
-![image-20260206113957296](./Typora图片/image-20260206113957296.png)
+![image-20260206113957296](./assets/image-20260206113957296.png)
 
 
 
@@ -1455,7 +1452,7 @@ const cube = createBox(scene, {
 
 
 
-<img src="./Typora图片/image-20251201113313520.png" alt="image-20251201113313520" style="zoom: 33%;" />
+<img src="./assets/image-20251201113313520.png" alt="image-20251201113313520" style="zoom: 33%;" />
 
 ------
 
@@ -1516,7 +1513,7 @@ const sphere = createSphere(scene, {
 });
 ```
 
-<img src="./Typora图片/image-20251201114136621.png" alt="image-20251201114136621" style="zoom: 33%;" />
+<img src="./assets/image-20251201114136621.png" alt="image-20251201114136621" style="zoom: 33%;" />
 
 
 
@@ -1557,7 +1554,7 @@ const halfSphereGeo = new THREE.SphereGeometry(
 
 
 
-<img src="./Typora图片/image-20251201114419069.png" alt="image-20251201114419069" style="zoom:33%;" />
+<img src="./assets/image-20251201114419069.png" alt="image-20251201114419069" style="zoom:33%;" />
 
 
 
@@ -1662,7 +1659,7 @@ const ground = createPlane(scene, {
 });
 ```
 
-<img src="./Typora图片/image-20251201142005401.png" alt="image-20251201142005401" style="zoom:33%;" />
+<img src="./assets/image-20251201142005401.png" alt="image-20251201142005401" style="zoom:33%;" />
 
 
 
@@ -1700,7 +1697,7 @@ scene.add(ambientLight);
 >
 > 位移贴图：`displacementMap` 用纹理的亮度（luminance）去位移顶点，亮（白）部分会沿法线向外推，暗（黑）部分则不推移。
 
-<img src="./Typora图片/image-20251201145454852.png" alt="image-20251201145454852" style="zoom:33%;" />
+<img src="./assets/image-20251201145454852.png" alt="image-20251201145454852" style="zoom:33%;" />
 
 ------
 
@@ -1780,7 +1777,7 @@ const mesh = createExtrudedShape(scene, shape, {
 
 > 决策：**想要复杂 2D 边界 + 可选洞 + 拉伸成 3D → 用 Shape + ExtrudeGeometry。**
 
-<img src="./Typora图片/image-20251201151535465.png" alt="image-20251201151535465" style="zoom:50%;" />
+<img src="./assets/image-20251201151535465.png" alt="image-20251201151535465" style="zoom:50%;" />
 
 ------
 
@@ -1865,7 +1862,7 @@ const quad = createCustomQuad(scene, {
 });
 ```
 
-<img src="./Typora图片/image-20251201153630487.png" alt="image-20251201153630487" style="zoom:33%;" />
+<img src="./assets/image-20251201153630487.png" alt="image-20251201153630487" style="zoom:33%;" />
 
 
 
@@ -1915,7 +1912,7 @@ import { createEllipseLine } from './utils/createEllipseLine';
 const ellipse = createEllipseLine(scene);
 ```
 
-<img src="./Typora图片/image-20251201154420678.png" alt="image-20251201154420678" style="zoom:33%;" />
+<img src="./assets/image-20251201154420678.png" alt="image-20251201154420678" style="zoom:33%;" />
 
 
 
@@ -1982,7 +1979,7 @@ const ellipse = createEllipseLine(scene);
 
 llambert 和 phong的区别，phong有高光
 
-<img src="./Typora图片/image-20251011100427040.png" alt="image-20251011100427040" style="zoom: 50%;" />
+<img src="./assets/image-20251011100427040.png" alt="image-20251011100427040" style="zoom: 50%;" />
 
 
 
@@ -2199,13 +2196,13 @@ const wrapS = THREE.ClampToEdgeWrapping;   // 边缘拉伸（超出部分取边�
 
 ClampToEdgeWrapping：边缘拉伸（超出部分取边缘像素颜色）
 
-<img src="./Typora图片/image-20260207145846739.png" alt="image-20260207145846739" style="zoom:50%;" />
+<img src="./assets/image-20260207145846739.png" alt="image-20260207145846739" style="zoom:50%;" />
 
 wrapS：RepeatWrapping：重复平铺
 
 wrapT：ClampToEdgeWrapping：边缘拉伸（超出部分取边缘像素颜色）
 
-<img src="./Typora图片/image-20260207145959857.png" alt="image-20260207145959857" style="zoom:50%;" />
+<img src="./assets/image-20260207145959857.png" alt="image-20260207145959857" style="zoom:50%;" />
 
 
 
@@ -2213,7 +2210,7 @@ wrapS：RepeatWrapping：重复平铺
 
 wrapT：MirroredRepeatWrapping：镜像重复
 
-<img src="./Typora图片/image-20260207150055280.png" alt="image-20260207150055280" style="zoom:50%;" />
+<img src="./assets/image-20260207150055280.png" alt="image-20260207150055280" style="zoom:50%;" />
 
 
 
@@ -2233,11 +2230,11 @@ wrapT：MirroredRepeatWrapping：镜像重复
 
 NearestFilter
 
-<img src="./Typora图片/image-20260207164730187.png" alt="image-20260207164730187" style="zoom:50%;" />
+<img src="./assets/image-20260207164730187.png" alt="image-20260207164730187" style="zoom:50%;" />
 
 LinearFilter
 
-<img src="./Typora图片/image-20260207164804948.png" alt="image-20260207164804948" style="zoom:50%;" />
+<img src="./assets/image-20260207164804948.png" alt="image-20260207164804948" style="zoom:50%;" />
 
 
 
@@ -2270,27 +2267,27 @@ minFilter参数的原理，当将相机移动至距离平面较远的位置时�
 
 NearestFilter（最近邻过滤）
 
-![image-20260207165531560](./Typora图片/image-20260207165531560.png)
+![image-20260207165531560](./assets/image-20260207165531560.png)
 
 LinearFilter（线性过滤）
 
-![image-20260207165540389](./Typora图片/image-20260207165540389.png)
+![image-20260207165540389](./assets/image-20260207165540389.png)
 
 NearestMipmapNearestFilter
 
-![image-20260207165602161](./Typora图片/image-20260207165602161.png)
+![image-20260207165602161](./assets/image-20260207165602161.png)
 
 LinearMipmapNearestFilter
 
-![image-20260207165621364](./Typora图片/image-20260207165621364.png)
+![image-20260207165621364](./assets/image-20260207165621364.png)
 
 NearestMipmapLinearFilter
 
-![image-20260207165647899](./Typora图片/image-20260207165647899.png)
+![image-20260207165647899](./assets/image-20260207165647899.png)
 
 LinearMipmapLinearFilter
 
-![image-20260207165711646](./Typora图片/image-20260207165711646.png)
+![image-20260207165711646](./assets/image-20260207165711646.png)
 
 
 
@@ -2487,6 +2484,7 @@ const dataTexture = new THREE.DataTexture(
 
 <hr>
 
+
 ### 贴图
 
 ####  贴图通道
@@ -2617,7 +2615,7 @@ animate();
 
 > 决策：想做“流动效果”（道路、流水、进度条） → **Plane + Texture.repeat + Texture.offset 动画**。
 
-<img src="./Typora图片/GIF 2025-10-13 9-53-20.gif" alt="GIF 2025-10-13 9-53-20" style="zoom: 33%;" />
+<img src="./assets/GIF 2025-10-13 9-53-20.gif" alt="GIF 2025-10-13 9-53-20" style="zoom: 33%;" />
 
 
 
@@ -2673,7 +2671,7 @@ export function createAoPlane(scene: THREE.Scene): THREE.Mesh {
 
 > 使用 `aoMap` 时，一定要把 `uv` 复制给 `uv2`。
 
-<img src="./Typora图片/image-20251201172305766.png" alt="image-20251201172305766" style="zoom:33%;" />
+<img src="./assets/image-20251201172305766.png" alt="image-20251201172305766" style="zoom:33%;" />
 
 
 
@@ -2705,13 +2703,13 @@ sphere.material = new THREE.MeshStandardMaterial({
 
 凹凸纹理
 
-<img src="./Typora图片/image-20251011163812669.png" alt="image-20251011163812669" style="zoom:33%;" />
+<img src="./assets/image-20251011163812669.png" alt="image-20251011163812669" style="zoom:33%;" />
 
 法向纹理
 
 阴影处能看到效果，效果没有凹凸纹理那么夸张
 
-<img src="./Typora图片/image-20251011163903625.png" alt="image-20251011163903625" style="zoom:33%;" />
+<img src="./assets/image-20251011163903625.png" alt="image-20251011163903625" style="zoom:33%;" />
 
 > 注意：要看到凹凸效果，**必须有光源**（点光/方向光）。
 
@@ -2776,7 +2774,7 @@ createDisplacedPlane(scene);
 
 
 
-<img src="./Typora图片/image-20251201174405181.png" alt="image-20251201174405181" style="zoom:50%;" />
+<img src="./assets/image-20251201174405181.png" alt="image-20251201174405181" style="zoom:50%;" />
 
 
 
@@ -2855,7 +2853,7 @@ setupHdrEnvironment(scene)
 > - 想让所有 Standard/Physical 材质都有真实反射 → 用 `scene.environment`；
 > - 只想给单个材质反射别的贴图 → 设置 `material.envMap`。
 
-<img src="./Typora图片/image-20251201194702112.png" alt="image-20251201194702112" style="zoom:50%;" />
+<img src="./assets/image-20251201194702112.png" alt="image-20251201194702112" style="zoom:50%;" />
 
 
 
@@ -2958,7 +2956,7 @@ new PMREMGenerator( renderer : WebGLRenderer )
 
 ##### 效果对比
 
-![screenshots](./Typora图片/screenshots-1775801138825-7.gif)
+![screenshots](./assets/screenshots-1775801138825-7.gif)
 
 
 
@@ -3056,7 +3054,7 @@ export function createGlassPanel(
 }
 ```
 
-<img src="./Typora图片/image-20251201200331223.png" alt="image-20251201200331223" style="zoom:33%;" />
+<img src="./assets/image-20251201200331223.png" alt="image-20251201200331223" style="zoom:33%;" />
 
 
 
@@ -3087,7 +3085,7 @@ pointLight.position.set(5, 5, 5); // 设置点光源位置
 scene.add(pointLight); // 将点光源添加到场景中
 ```
 
-<img src="./Typora图片/image-20251011194318098.png" alt="image-20251011194318098" style="zoom: 33%;" />
+<img src="./assets/image-20251011194318098.png" alt="image-20251011194318098" style="zoom: 33%;" />
 
 
 
@@ -3116,7 +3114,7 @@ iridescenceMesh.position.y = 2; // 将克隆的网格模型向上移动
 scene.add(iridescenceMesh); // 将克隆的网格模型添加到场景中
 ```
 
-<img src="./Typora图片/image-20251011194805686.png" alt="image-20251011194805686" style="zoom: 50%;" />
+<img src="./assets/image-20251011194805686.png" alt="image-20251011194805686" style="zoom: 50%;" />
 
 
 
@@ -3154,7 +3152,7 @@ createClearCoatMesh(scene, cubeTexture, boxMesh);
 
 > 当需要真实玻璃、车漆、丝绒、虹彩这种效果时，会选择 MeshPhysicalMaterial，并结合 envMap/HDR 环境贴图。
 
-<img src="./Typora图片/image-20251201200437873.png" alt="image-20251201200437873" style="zoom:33%;" />
+<img src="./assets/image-20251201200437873.png" alt="image-20251201200437873" style="zoom:33%;" />
 
 ------
 
@@ -3309,7 +3307,7 @@ floorMesh.material = material;
 
 效果
 
-![image-20260409172630165](./Typora图片/image-20260409172630165.png)
+![image-20260409172630165](./assets/image-20260409172630165.png)
 
 传统
 
@@ -3563,7 +3561,7 @@ const plane = new THREE.PlaneGeometry( 5, 5 ); // 创建一个平面几何体对
 console.log(plane); // 打印平面几何体对象 查看uv坐标
 ```
 
-<img src="./Typora图片/image-20251011101317877.png" alt="image-20251011101317877" style="zoom: 80%;" />
+<img src="./assets/image-20251011101317877.png" alt="image-20251011101317877" style="zoom: 80%;" />
 
 
 
@@ -3843,9 +3841,9 @@ renderer.shadowMap.enabled = true; // 开启阴影计算
 renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 生成带有柔和边缘的阴影
 ```
 
-<img src="./Typora图片/image-20251013122138286.png" alt="image-20251013122138286" style="zoom: 33%;" />
+<img src="./assets/image-20251013122138286.png" alt="image-20251013122138286" style="zoom: 33%;" />
 
-<img src="./Typora图片/image-20251201211942679.png" alt="image-20251201211942679" style="zoom: 50%;" />
+<img src="./assets/image-20251201211942679.png" alt="image-20251201211942679" style="zoom: 50%;" />
 
 
 
@@ -3969,7 +3967,7 @@ createPointLightWithGui(scene, gui, testObjects);
 renderer.shadowMap.enabled = true; // 开启阴影计算
 ```
 
-<img src="./Typora图片/image-20251201213541365.png" alt="image-20251201213541365" style="zoom:50%;" />
+<img src="./assets/image-20251201213541365.png" alt="image-20251201213541365" style="zoom:50%;" />
 
 ------
 
@@ -4020,7 +4018,7 @@ dir.target.position.set(0, 2, 0);
 上方的橙色框表示光源位置（5，8，3），平面表示光源方向，下面的橙色框表示光源照向哪里，这里是（0，2，0）
 ```
 
-<img src="./Typora图片/image-20260206100511704.png" alt="image-20260206100511704" style="zoom:67%;" />
+<img src="./assets/image-20260206100511704.png" alt="image-20260206100511704" style="zoom:67%;" />
 
 
 
@@ -4153,9 +4151,9 @@ export function createDirectionalLightWithGui(
 }
 ```
 
-<img src="./Typora图片/image-20251201220405471.png" alt="image-20251201220405471" style="zoom:33%;" />
+<img src="./assets/image-20251201220405471.png" alt="image-20251201220405471" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20251013165722376.png" alt="image-20251013165722376" style="zoom: 50%;" />
+<img src="./assets/image-20251013165722376.png" alt="image-20251013165722376" style="zoom: 50%;" />
 
 > 在阴影相机远端面里面的就有阴影
 > 简单讲，阴影只会被渲到 `shadow.camera` 定义的盒子体积内；范围过大 → 阴影模糊；范围过小 → 物体被裁掉没阴影。
@@ -4232,11 +4230,11 @@ dir.shadow.radius = 1; ...
 
 阴影分辨率：512，1024，4096
 
-<img src="./Typora图片/image-20260206102009056.png" alt="image-20260206102009056" style="zoom: 50%;" />
+<img src="./assets/image-20260206102009056.png" alt="image-20260206102009056" style="zoom: 50%;" />
 
-<img src="./Typora图片/image-20260206102026051.png" alt="image-20260206102026051" style="zoom:50%;" />
+<img src="./assets/image-20260206102026051.png" alt="image-20260206102026051" style="zoom:50%;" />
 
-<img src="./Typora图片/image-20260206102056853.png" alt="image-20260206102056853" style="zoom:50%;" />
+<img src="./assets/image-20260206102056853.png" alt="image-20260206102056853" style="zoom:50%;" />
 
 
 
@@ -4246,11 +4244,11 @@ dir.shadow.radius = 1; ...
 
 bias：0，-0.01，0.01
 
-<img src="./Typora图片/image-20260206111036705.png" alt="image-20260206111036705"  />
+<img src="./assets/image-20260206111036705.png" alt="image-20260206111036705"  />
 
-<img src="./Typora图片/image-20260206111115049.png" alt="image-20260206111115049"  />
+<img src="./assets/image-20260206111115049.png" alt="image-20260206111115049"  />
 
-![image-20260206111155608](./Typora图片/image-20260206111155608.png)
+![image-20260206111155608](./assets/image-20260206111155608.png)
 
 
 
@@ -4281,11 +4279,11 @@ bias：0，-0.01，0.01
 
 将光源高度调低，从而使得光线入射方向和地面之间夹角比较小，并且不做任何bias处理，从而得到比较明显的shadow acne现象
 
-<img src="./Typora图片/image-20260206102626725.png" alt="image-20260206102626725" style="zoom:67%;" />
+<img src="./assets/image-20260206102626725.png" alt="image-20260206102626725" style="zoom:67%;" />
 
 把acne放大看是间隔的条纹
 
-<img src="./Typora图片/image-20260206102714330.png" alt="image-20260206102714330" style="zoom:67%;" />
+<img src="./assets/image-20260206102714330.png" alt="image-20260206102714330" style="zoom:67%;" />
 
 
 
@@ -4311,14 +4309,14 @@ bias：0，-0.01，0.01
 - 也会有一部分点满足 
 
 - $$
-   (z_r(x) > z_s)（误判在阴影，自遮挡）
+  (z_r(x) > z_s)（误判在阴影，自遮挡）
   $$
 
 - 当跨过texel边界，(z_s) 突然跳到下一个 texel 的值，于是“误判区/不误判区”也跟着周期性出现——看起来就是**一条一条的条纹**（acne）。
 
 - 图里粉色锯齿线（shadow func）表达的正是：**存储深度 (z_s) 是分段的、会跳变**；而计算的深度是连续的。两者一比较就会在某些区间产生系统性误差。被粉色锯齿线覆盖的区域黑线区域会被判定为阴影区域
 
-![image-20260206110037791](./Typora图片/image-20260206110037791.png)
+![image-20260206110037791](./assets/image-20260206110037791.png)
 
 
 
@@ -4332,9 +4330,9 @@ bias 的副作用：
 	物体脚底阴影与物体之间出现缝隙（像漂浮），这就是常说的 peter panning。
 ```
 
-![image-20260206110719403](./Typora图片/image-20260206110719403.png)
+![image-20260206110719403](./assets/image-20260206110719403.png)
 
-![image-20260206111305483](./Typora图片/image-20260206111305483.png)
+![image-20260206111305483](./assets/image-20260206111305483.png)
 
 
 
@@ -4350,9 +4348,9 @@ radius：0，10
 
 对阴影类型为PCFShadowMap的阴影无效，仅仅对VSMShadowMap生效
 
-<img src="./Typora图片/image-20260206111439511.png" alt="image-20260206111439511" style="zoom:33%;" />
+<img src="./assets/image-20260206111439511.png" alt="image-20260206111439511" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20260206111454026.png" alt="image-20260206111454026" style="zoom:33%;" />
+<img src="./assets/image-20260206111454026.png" alt="image-20260206111454026" style="zoom:33%;" />
 
 
 
@@ -4448,7 +4446,7 @@ setSolidBackground(scene, 0x222233); // 深色背景
 
 > 适合：debug、简单 UI、太空/深色场景。
 
-<img src="./Typora图片/image-20251202093643841.png" alt="image-20251202093643841" style="zoom: 20%;" />
+<img src="./assets/image-20251202093643841.png" alt="image-20251202093643841" style="zoom: 20%;" />
 
 ------
 
@@ -4486,9 +4484,10 @@ scene.background = gradientTexture;
 
 
 
-<img src="./Typora图片/image-20260206163722400.png" alt="image-20260206163722400" style="zoom: 25%;" />
+<img src="./assets/image-20260206163722400.png" alt="image-20260206163722400" style="zoom: 25%;" />
 
 <hr>
+
 
 ###  2D 纹理当背景图
 
@@ -4515,7 +4514,7 @@ setTextureBackground(scene, '/src/assets/texture/bg.jpeg');
 
 > 适合：固定背景图、海报式效果、简单天空。
 
-<img src="./Typora图片/image-20251202094109702.png" alt="image-20251202094109702" style="zoom:20%;" />
+<img src="./assets/image-20251202094109702.png" alt="image-20251202094109702" style="zoom:20%;" />
 
 
 
@@ -4563,7 +4562,7 @@ const cubeTex = setCubeTextureBackground(
 
 > 适合：360° 环境、室外、公园、城市等“包围式天空”。
 
-<img src="./Typora图片/GIF 2025-10-11 17-19-22.gif" alt="GIF 2025-10-11 17-19-22" style="zoom:25%;" />
+<img src="./assets/GIF 2025-10-11 17-19-22.gif" alt="GIF 2025-10-11 17-19-22" style="zoom:25%;" />
 
 ------
 
@@ -4608,7 +4607,7 @@ await setupHdrBackgroundAndEnvironment(scene); // 背景 + environment 一步搞
 
 > 适合：高质量环境照明（金属球、玻璃、车模），让场景看起来“真实置于某个环境中”。
 
-<img src="./Typora图片/GIF 2025-10-11 17-21-11.gif" alt="GIF 2025-10-11 17-21-11" style="zoom:25%;" />
+<img src="./assets/GIF 2025-10-11 17-21-11.gif" alt="GIF 2025-10-11 17-21-11" style="zoom:25%;" />
 
 
 
@@ -4652,7 +4651,7 @@ export function setupEnvironmentAndManyMetalSpheres(
 
 > 想给所有 PBR 材质统一加环境反射 → set `scene.environment`。
 
-<img src="./Typora图片/image-20251202100002373.png" alt="image-20251202100002373" style="zoom:25%;" />
+<img src="./assets/image-20251202100002373.png" alt="image-20251202100002373" style="zoom:25%;" />
 
 
 
@@ -4689,7 +4688,7 @@ setupLinearFog(scene, 0xffffff, 3, 15);
 
 > 越靠近 `near` → 清晰；越靠近 `far` → 完全雾色。
 
-<img src="./Typora图片/image-20251202100357917.png" alt="image-20251202100357917" style="zoom: 25%;" />
+<img src="./assets/image-20251202100357917.png" alt="image-20251202100357917" style="zoom: 25%;" />
 
 #### 指数雾（FogExp2）
 
@@ -4707,7 +4706,7 @@ export function setupExpFog(
 
 > 适合“仙气”“沙尘”“烟雾”感更强的场景。
 
-<img src="./Typora图片/image-20251202100756224.png" alt="image-20251202100756224" style="zoom:33%;" />
+<img src="./assets/image-20251202100756224.png" alt="image-20251202100756224" style="zoom:33%;" />
 
 
 
@@ -4784,7 +4783,7 @@ gui.add(mat, 'aoMapIntensity', 0, 5, 0.1).name('AO 强度');
 
 >“AO 贴图不是光源，而是一张乘性贴图，用于暗化缝隙和凹处，提高立体感；在 three.js 里需要 `uv2`，我会在加载几何后复制 `uv` 到 `uv2`。”
 
-<img src="./Typora图片/image-20251202103233906.png" alt="image-20251202103233906" style="zoom:25%;" />
+<img src="./assets/image-20251202103233906.png" alt="image-20251202103233906" style="zoom:25%;" />
 
 “乘性贴图”理解
 
@@ -4948,7 +4947,7 @@ animate();
 
 > 记忆：Tween.js 不会自动跑，它只负责“算插值”，每帧你要手动调用 `TWEEN.update(time)`。
 
-<img src="./Typora图片/GIF 2025-10-14 20-00-35.gif" alt="GIF 2025-10-14 20-00-35" style="zoom:50%;" />
+<img src="./assets/GIF 2025-10-14 20-00-35.gif" alt="GIF 2025-10-14 20-00-35" style="zoom:50%;" />
 
 
 
@@ -5033,7 +5032,7 @@ animate();
 > - Tween.js 是“从 A 渐变到 B”，更偏 UI/过渡，也就是从当前变为目标状态，无法充分干预中间过程；
 > - AnimationMixer 是“有时间轴 + clip + 多 track 的动画系统”，更适合复杂动作组织和 glTF 动画。
 
-<img src="./Typora图片/GIF 2025-10-13 21-25-03.gif" alt="GIF 2025-10-13 21-25-03" style="zoom:33%;" />
+<img src="./assets/GIF 2025-10-13 21-25-03.gif" alt="GIF 2025-10-13 21-25-03" style="zoom:33%;" />
 
 
 
@@ -5045,7 +5044,7 @@ animate();
 
 
 
-![image-20260327153416677](./Typora图片/image-20260327153416677.png)
+![image-20260327153416677](./assets/image-20260327153416677.png)
 
 
 
@@ -5098,7 +5097,7 @@ function animate() {
 
 
 
-![three播放模型内建动画](./Typora图片/three播放模型内建动画.png)
+![three播放模型内建动画](./assets/three播放模型内建动画.png)
 
 
 
@@ -5218,7 +5217,7 @@ function onTick(progress) {            // progress ∈ [0, 1]
 
 > 总结：GLTF 动画 = gltf.animations（Clip 数组）+ AnimationMixer + AnimationAction，和你自己定义关键帧的模式是完全一致的，只是 Clip 来自模型文件。
 
-<img src="./Typora图片/GIF 2025-10-13 22-13-13.gif" alt="GIF 2025-10-13 22-13-13" style="zoom:50%;" />
+<img src="./assets/GIF 2025-10-13 22-13-13.gif" alt="GIF 2025-10-13 22-13-13" style="zoom:50%;" />
 
 
 
@@ -5377,7 +5376,7 @@ const ambulance = await loadObjWithMtl(
 - `obj` 返回的是一个 `THREE.Group`，一般不要只看 `children`，用 `traverse` 更可靠；
 - 用 `isMesh` 判断，只给网格设置阴影或材质。
 
-<img src="./Typora图片/image-20251202152212884.png" alt="image-20251202152212884" style="zoom:25%;" />
+<img src="./assets/image-20251202152212884.png" alt="image-20251202152212884" style="zoom:25%;" />
 
 
 
@@ -5395,7 +5394,7 @@ const ambulance = await loadObjWithMtl(
 
 gltf模型对象字面量
 
-<img src="./Typora图片/image-20251013193552980.png" alt="image-20251013193552980" style="zoom:80%;" />
+<img src="./assets/image-20251013193552980.png" alt="image-20251013193552980" style="zoom:80%;" />
 
 ------
 
@@ -5460,6 +5459,7 @@ EXT_texture_webp			WebP 纹理支持
 
 
 <hr>
+
 
 
 
@@ -5606,7 +5606,7 @@ const { scene: car, animations: carAnimations } = await loadGltfWithDraco(
 > 2. 然后 `gltfLoader.setDRACOLoader(dracoLoader)`；
 > 3. 其他用法和普通 GLTFLoader 是一样的。
 
-<img src="./Typora图片/image-20251202154943431.png" alt="image-20251202154943431" style="zoom:33%;" />
+<img src="./assets/image-20251202154943431.png" alt="image-20251202154943431" style="zoom:33%;" />
 
 
 
@@ -5649,7 +5649,7 @@ group对象
 - 本身没有几何或渲染输出，只用于组织场景层次、统一变换或批量操作子对象。
 - 常用场景：把若干 Mesh 组合成一个整体移动、把模型的各部分归为一组、作为 glTF/GLB 中 gltf.scene 的容器。
 
-<img src="./Typora图片/image-20251013172122427.png" alt="image-20251013172122427" style="zoom: 67%;" />
+<img src="./assets/image-20251013172122427.png" alt="image-20251013172122427" style="zoom: 67%;" />
 
 
 
@@ -5795,7 +5795,7 @@ createSpriteWall(scene, 100, 0.2, 0.1);
 
 > 记忆：Sprite = **单个精灵对象**，默认总是朝向相机。
 
-<img src="./Typora图片/image-20251202160843772.png" alt="image-20251202160843772" style="zoom:33%;" />
+<img src="./assets/image-20251202160843772.png" alt="image-20251202160843772" style="zoom:33%;" />
 
 
 
@@ -5861,13 +5861,13 @@ const pointsWall = createPointsWall(scene, 100, 1, 0.5);
 
 > Points = **一个对象 + 一块大 BufferGeometry**，专为“很多个点”设计。
 
-<img src="./Typora图片/image-20251202162054764.png" alt="image-20251202162054764" style="zoom:33%;" />
+<img src="./assets/image-20251202162054764.png" alt="image-20251202162054764" style="zoom:33%;" />
 
 
 
 粒子系统点位置
 
-<img src="./Typora图片/image-20251013204215382.png" alt="image-20251013204215382" style="zoom:67%;" />
+<img src="./assets/image-20251013204215382.png" alt="image-20251013204215382" style="zoom:67%;" />
 
 
 
@@ -5939,7 +5939,7 @@ renderer.renderLoop(() => {
 > - 每次改完设置 `positionAttr.needsUpdate = true`；
 > - 对于透明粒子，建议 `depthWrite = false`，避免排序造成的遮挡问题。
 
-<img src="./Typora图片/GIF 2025-10-13 21-06-01-1760360843637-6.gif" alt="GIF 2025-10-13 21-06-01" style="zoom:33%;" />
+<img src="./assets/GIF 2025-10-13 21-06-01-1760360843637-6.gif" alt="GIF 2025-10-13 21-06-01" style="zoom:33%;" />
 
 
 
@@ -6000,7 +6000,7 @@ mouseNdc.x = (e.clientX / window.innerWidth) * 2 - 1;
 mouseNdc.y = -(e.clientY / window.innerHeight) * 2 + 1;
 ```
 
-<img src="./Typora图片/QQ图片20251014142200.png" alt="QQ图片20251014142200" style="zoom:67%;" />
+<img src="./assets/QQ图片20251014142200.png" alt="QQ图片20251014142200" style="zoom:67%;" />
 
 
 
@@ -6152,7 +6152,7 @@ window.addEventListener('click', (e) => {
 > - 通常用 `gltf.scene` 或 `obj` 作为 target，Raycaster 会递归检查子 Mesh；
 > - 建议始终用 `traverse` 给 `isMesh` 的子节点设置阴影等属性。
 
-<img src="./Typora图片/GIF 2025-10-14 14-51-02.gif" alt="GIF 2025-10-14 14-51-02" style="zoom: 33%;" />
+<img src="./assets/GIF 2025-10-14 14-51-02.gif" alt="GIF 2025-10-14 14-51-02" style="zoom: 33%;" />
 
 
 
@@ -6244,7 +6244,7 @@ window.addEventListener('mouseup', () => {
 });
 ```
 
-<img src="./Typora图片/GIF 2025-10-14 14-51-02-1760426969492-3.gif" alt="GIF 2025-10-14 14-51-02" style="zoom: 33%;" />
+<img src="./assets/GIF 2025-10-14 14-51-02-1760426969492-3.gif" alt="GIF 2025-10-14 14-51-02" style="zoom: 33%;" />
 
 
 

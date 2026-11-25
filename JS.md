@@ -884,6 +884,353 @@ arr.splice(1, 0, 'X','Y') // 返回 []，arr 变为 ['A','X','Y','B','C','D','E'
 
 
 
+# 代码心智模型
+
+顺序、区域、布尔组合、分类组合、执行优先级、状态迁移、区间关系。
+
+使用查询
+
+| 模型       | 什么时候用                   |
+| ---------- | ---------------------------- |
+| ① 尺子     | 大小、先后、等级、进度       |
+| ② 平面区域 | 两个数值条件，以及与、或、非 |
+| ③ 立方体   | 三个布尔条件交织             |
+| ④ 棋盘     | 角色、归属等分类条件组合     |
+| ⑤ 筛子     | 连续的 `if (...) return`     |
+| ⑥ 路线图   | 状态、事件、迁移条件         |
+| ⑦ 时间带   | 时间冲突、范围覆盖、区间相交 |
+
+
+
+
+
+## 顺序
+
+一个有序变量，被多个阈值分段代码
+
+查询阶段3 → done
+
+查询阶段4 → current
+
+![image-20261117101044405](./assets/image-20261117101044405.png)
+
+![image-20261117101150839](./assets/image-20261117101150839.png)
+
+
+
+例如，许可证有生效时间、到期时间、宽限期结束时间：
+
+```js
+// 假设 startsAt < expiresAt < graceEndsAt，均为时间戳
+function licenseStatus(now, license) {
+  const {
+    startsAt,
+    expiresAt,
+    graceEndsAt,
+    revoked,
+  } = license;
+
+  if (revoked) {
+    return "revoked";
+  }
+
+  if (now < startsAt) {
+    return "scheduled";
+  }
+
+  if (now >= graceEndsAt) {
+    return "disabled";
+  }
+
+  if (now >= expiresAt) {
+    return "grace";
+  }
+
+  return "active";
+}
+```
+
+
+
+
+
+
+
+## 区域
+
+两个数值条件，以及与、或、非
+
+条件：年龄≥18 && 分数≥60，同时成立
+
+年龄 42 / 分数 21 → 假
+
+原点是当前输入
+
+![image-20261117101924622](./assets/image-20261117101924622.png)
+
+
+
+条件：年龄≥18 || 分数≥60，至少一个成立
+
+年龄 42 / 分数 21 → 真
+
+![image-20261117102037965](./assets/image-20261117102037965.png)
+
+
+
+条件：!(年龄≥18 || 分数≥60)，不同时成立
+
+年龄 42 / 分数 21 → 真
+
+![image-20261117102417230](./assets/image-20261117102417230.png)
+
+
+
+例如，金额和风险分数共同决定是否人工审核：
+
+```js
+function needsManualReview(amount, risk) {
+  return (
+    (amount >= 5000 && risk >= 0.8) ||
+    (amount >= 20000 && risk >= 0.5)
+  );
+}
+```
+
+把金额放在横轴，风险分数放在纵轴：
+
+- `amount >= 5000`：竖线右侧。
+- `risk >= 0.8`：横线上方。
+- 两者 `&&`：取右上方的交集。
+- 两组条件 `||`：把两个区域合起来。
+
+最终得到一个“阶梯形”的审核区域。
+
+
+
+
+
+
+
+## 布尔组合
+
+三个布尔条件交织，八个顶点代表全部组合；沿一条边走，只改变一个条件
+
+立方体的八个顶点，就是从 `000` 到 `111` 的全部组合。允许编辑的只有：
+
+```
+110：已登录，是所有者
+101：已登录，是管理员
+111：已登录，两种身份都有
+```
+
+ABC = 010 → 拒绝
+
+![image-20261117142849187](./assets/image-20261117142849187.png)
+
+
+
+
+
+常见于权限、功能开关、资格组合。
+
+例如：
+
+```js
+function canEdit({ loggedIn, isOwner, isAdmin }) {
+  if (!loggedIn || (!isOwner && !isAdmin)) {
+    return false;
+  }
+
+  return true;
+}
+```
+
+逐字读时，需要处理三个否定和两层括号。先翻译成正面规则：
+
+```js
+function canEdit({ loggedIn, isOwner, isAdmin }) {
+  return loggedIn && (isOwner || isAdmin);
+}
+```
+
+
+
+
+
+
+
+## 分类组合
+
+这里可以让角色做行、文档状态做列。先固定 `isOwner = true`：
+
+![image-20261117143905575](./assets/image-20261117143905575.png)
+
+- 已归档的整列都是只读，管理员也受限制。
+- 编辑者对草稿和已发布文档的能力不同。
+
+常见于角色权限、订单类型、文档状态、不同渠道策略。
+
+例如：
+
+```js
+function documentAction({ role, status, isOwner }) {
+  if (status === "archived") {
+    return "read";
+  }
+
+  if (role === "admin") {
+    return "edit";
+  }
+
+  if (role === "editor" && isOwner && status === "draft") {
+    return "edit";
+  }
+
+  if (role === "editor" && status === "published") {
+    return "comment";
+  }
+
+  return "read";
+}
+```
+
+
+
+
+
+
+
+## 执行优先级
+
+输入像一颗球，从上往下通过筛子：
+
+```
+已封禁？──── 是 → deny
+   否
+未验证？──── 是 → verify
+   否
+余额不足？── 是 → topup
+   否
+高风险？──── 是 → review
+   否
+   pay
+```
+
+
+
+常见于校验、支付拦截、路由匹配、降级策略。
+
+例如：
+
+```js
+function paymentDecision(user, amount) {
+  if (user.blocked) {
+    return "deny";
+  }
+
+  if (!user.verified) {
+    return "verify";
+  }
+
+  if (user.balance < amount) {
+    return "topup";
+  }
+
+  if (user.risk >= 0.8) {
+    return "review";
+  }
+
+  return "pay";
+}
+```
+
+
+
+
+
+
+
+## 状态迁移
+
+同一个事件，在不同状态下有不同意义
+
+![image-20261117144622893](./assets/image-20261117144622893.png)
+
+
+
+常见于审批、订单、连接状态、上传重试、异步任务。
+
+例如：
+
+```js
+function nextState(state, event, context) {
+  switch (state) {
+    case "draft":
+      if (event === "SUBMIT" && context.complete) {
+        return "review";
+      }
+      break;
+
+    case "review":
+      if (event === "APPROVE" && context.isReviewer) {
+        return "approved";
+      }
+
+      if (event === "REJECT" && context.isReviewer) {
+        return "draft";
+      }
+      break;
+
+    case "approved":
+      if (event === "REVOKE" && context.isAdmin) {
+        return "review";
+      }
+      break;
+  }
+
+  return state;
+}
+```
+
+
+
+
+
+
+
+## 区间关系
+
+A [3,7) / B [5,9) → 重叠
+
+![image-20261117144819742](./assets/image-20261117144819742.png)
+
+
+
+常见于会议冲突、排班、预约、数据范围查询。
+
+有人会分别判断“谁的起点落在谁里面”：
+
+```js
+// 假设两个区间都满足 start < end
+// 使用半开区间：[start, end)
+function overlaps(a, b) {
+  const aStartsInsideB =
+    b.start <= a.start &&
+    a.start < b.end;
+
+  const bStartsInsideA =
+    a.start <= b.start &&
+    b.start < a.end;
+
+  return aStartsInsideB || bStartsInsideA;
+}
+```
+
+
+
+
+
 # ES新笔记体系
 
 ![image-20260629144245465](./Typora图片/image-20260629144245465.png)

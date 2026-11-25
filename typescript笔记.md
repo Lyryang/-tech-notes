@@ -97,6 +97,35 @@ function add(a: number, b: number) {
 
 
 
+## 类型别名`type`
+
+给类型起名
+
+```ts
+type ID = string | number;       // 给联合类型起名
+const id: ID = 123;
+```
+
+以后用`ID`表示联合类型`string | number`，无需再写`const id: string | number = 123;`
+
+
+
+
+
+## 字面量类型
+
+把某个具体的值当作类型，之后变量就只能取这一个值，不能是一类值
+
+```ts
+let a: "hello" = "hello";   // 只能是 "hello"
+let b: 42 = 42;             // 只能是 42
+let c: true = true;         // 只能是 true
+
+a = "world"; // ❌ 类型 '"world"' 不能赋给类型 '"hello"'
+```
+
+
+
 
 
 ## 联合类型
@@ -105,36 +134,32 @@ function add(a: number, b: number) {
 
 ```ts
 let value: string | number;
+value = 'hello'; // ✅
+value = true;    // ❌ 只能是 string 或 number
 ```
 
+
+
+联合类型结合字面量类型，表示变量值只能从那几个中选
+
 ```ts
-value = 'hello'; // ✅
-value = 123;     // ✅
-value = true;    // ❌ 只能是 string 或 number，boolean 不在联合类型里
+type Status = "loading" | "success" | "error";
 ```
 
 
 
 "收窄"(narrowing)
 
-拿到联合类型的值后，不能直接调用某个具体类型独有的方法，必须先"收窄"(narrowing)——最常见是用 `typeof` 判断：
+编译器根据代码中写的判断，把变量从宽类型（如 `string | number`）缩小成更加具体的类型
 
 ```ts
-if (typeof id === "string") {
-  id.toUpperCase(); // TS 确认这里是 string，才允许调用
-} else {
-  id.toFixed(2);    // 这个分支里 TS 知道是 number
+function f(x: string | number) {
+  if (typeof x === "string") {
+    x.toUpperCase(); // string
+  } else {
+    x.toFixed(2);    // number
+  }
 }
-```
-
-这是 TS 联合类型的核心设计意图：**逼你显式处理每一种可能性**，而不是运行时才炸。
-
-
-
-字符串字面量联合类型，相当于轻量级枚举：
-
-```ts
-type Status = "loading" | "success" | "error";
 ```
 
 
@@ -219,8 +244,9 @@ scores.chemistry = "78";
 
 ## 接口（interface）
 
+interface：描述对象的形状（有哪些属性、每个属性什么类型）
+
 ```ts
-// interface：描述对象的形状（有哪些属性、每个属性什么类型）
 interface Person {
   name: string;
   age?: number; // ? 表示可选属性
@@ -228,17 +254,15 @@ interface Person {
 }
 
 const p: Person = { name: "Tom", id: "u1" }; // age 可以不给
-console.log(p); // { name: 'Tom', id: 'u1' }
-// p.id = "u2"; // 报错：readonly 属性不能重新赋值
 ```
 
+接口可以继承（extends），组合出更大的形状
+
 ```ts
-// 接口可以继承（extends），组合出更大的形状
 interface Employee extends Person {
   salary: number;
 }
 const e: Employee = { name: "Jerry", id: "u2", salary: 8000 };
-console.log(e); // { name: 'Jerry', id: 'u2', salary: 8000 }
 ```
 
 
@@ -294,21 +318,20 @@ let grid: number[][] = [
 ## 函数类型
 
 ```ts
-// 1. 基本注解：参数类型 + 返回值类型
+// 1. 参数类型 + 返回值类型
 function add(a: number, b: number): number {
   return a + b;
 }
 ```
 
 ```ts
-// 2. 函数类型表达式：描述"一个函数长什么样"，可以拿来做变量/参数的类型
+// 2. 函数类型表达式
 let mathOp: (a: number, b: number) => number;
-mathOp = add;
-mathOp = (a, b) => a - b; // 赋值时 a、b 的类型可省略，由 mathOp 的类型反推出来
+mathOp = (a, b) => a - b;
 ```
 
 ```ts
-// 3. void 返回类型：表示"不关心返回值"，函数体可以没有 return
+// 3. void 返回类型：表示函数体可以没有 return
 function logResult(value: number): void {
   console.log("结果:", value);
 }
@@ -322,7 +345,7 @@ function greet(name: string, title?: string): string {
 ```
 
 ```ts
-// 5. 默认参数：不传时用默认值，类型从默认值推断出来
+// 5. 参数默认值
 function power(base: number, exponent: number = 2): number {
   return base ** exponent;
 }
@@ -336,7 +359,7 @@ function sum(...nums: number[]): number {
 ```
 
 ```ts
-// 7. type 别名：给函数类型起名字，方便复用（常用于回调参数）
+// 7. type 别名：用于传回调函数
 type Comparator = (a: number, b: number) => boolean;
 
 function findFirst(nums: number[], test: Comparator): number | undefined {
@@ -353,12 +376,13 @@ findFirst([-1, 2, -3], (a, b) => a > b)
 
 ## 类 class
 
+基础类：字段 + 构造函数 + 方法
+
 ```ts
-// 1. 基础类：字段 + 构造函数 + 方法
 class Animal {
-  name: string; // 字段声明（必须先声明类型）
-  private age: number; // private：只能在类内部访问
-  readonly species: string; // readonly：构造后不能再赋值
+  name: string;               // 字段声明（必须先声明类型）
+  private age: number;        // private：只能在类内部访问
+  readonly species: string;   // readonly：构造后不能再赋值
 
   constructor(name: string, age: number, species: string) {
     this.name = name;
@@ -377,8 +401,9 @@ console.log(dog.name); // public 字段可以外部访问
 // console.log(dog.age); // 编译报错：age 是 private
 ```
 
+getter/setter：像访问属性一样调用方法
+
 ```ts
-// 2. getter/setter：像访问属性一样调用方法
 class Temperature {
   private _celsius = 0;
   get celsius(): number {
@@ -396,11 +421,10 @@ t.celsius = 25; // 调用 setter
 console.log(`${t.celsius}°C = ${t.fahrenheit}°F`); // 调用 getter
 ```
 
-`interface` 描述"形状"（有哪些方法/字段），`implements` 要求类必须满足这个形状。
+`implements`：要求类必须遵守某个接口形状的约定
 
 ```ts
-// 3. implements：类遵守某个接口的形状约定
-interface Flyable {
+interface Flyable 
   fly(): string;
 }
 class Bird implements Flyable {
@@ -552,30 +576,9 @@ function delay<T>(value: T, ms: number): Promise<T> {
     setTimeout(() => resolve(value), ms);
   });
 }
-```
 
-
-
-`delay<T>` 中的 `T` 是调用时根据传入参数自动推断的，不用手写。
-
-```ts
 const num = await delay(42, 500);      // T 被推断为 number → num: number
-const str = await delay("hello", 500); // T 被推断为 string → str: string
 ```
-
-
-
-泛型让同一份异步逻辑能安全地适配任意类型，`await` 之后拿到的变量类型也是准确的，否则只能写 `Promise<any>` 或者对每种类型写一个重复的函数（`delayNumber`、`delayString`...）
-
-
-
-其它常用：
-
-- `Promise<void>`：不关心 resolve 的值（比如只是等待某个操作完成）。
-- `Promise<User>`：resolve 出一个自定义类型的对象，常见于 `fetch` 封装。
-- `async function foo(): Promise<T>`：写 `async` 函数时，TypeScript 会自动把返回值包一层 `Promise<...>`，通常可以省略不写，靠推断。
-
-
 
 
 
@@ -763,5 +766,45 @@ new Calculator() 创建实例,初始化字段 label 时,调用 upper 返回的�
 打印 调用类里的add方法。
 calc.add(2, 3):实际执行的是 logged 返回的包装函数,先算出 5,再打印 【logged装饰器返回的匿名函数被调用】。返回值 5 没有被使用。
 最后打印 label = CALCULATOR。
+```
+
+
+
+
+
+
+
+## Record<K, V>
+
+Record<K, V>是内置工具类型，表示某个对象的形状必须是：键类型为K，值类型为V。
+
+`K` 必须是 `string | number | symbol` 这种能做对象键的类型。
+
+```ts
+const cache: Record<string, number> = {};
+cache["a"] = 1;
+```
+
+工具Record的定义
+
+```ts
+type Record<K extends keyof any, T> = {
+  [P in K]: T;
+}
+```
+
+
+
+如果是联合枚举类型，每个键都必须出现
+
+```ts
+type City = "beijing" | "shanghai" | "shenzhen";
+
+const center: Record<City, [number, number]> = {
+  beijing: [116.397428, 39.90923],
+  shanghai: [121.4737, 31.2304],
+  shenzhen: [114.0579, 22.5431],
+};
+// 少写一个键，或多写一个键，都会报错
 ```
 

@@ -928,7 +928,7 @@ enuMatrix：
 可以通过： Cesium.Matrix3.getColumn(enu矩阵, 列数, new Cesium.Cartesian3());这个方法获取第几列的数值
 ```
 
-![image-20260326175023313](./Typora图片/image-20260326175023313.png)
+![image-20260326175023313](./assets/image-20260326175023313.png)
 
 
 
@@ -964,7 +964,7 @@ console.log('点P在本地坐标系下的坐标', localPoint); // 输出点P在�
 
 东-北-上坐标系：
 
-<img src="./Typora图片/image-20260106203752014.png" alt="image-20260106203752014" style="zoom: 50%;" />
+<img src="./assets/image-20260106203752014.png" alt="image-20260106203752014" style="zoom: 50%;" />
 
 
 
@@ -976,7 +976,7 @@ console.log('点P在本地坐标系下的坐标', localPoint); // 输出点P在�
 
 new Cesium.Cartesian2(x, y)
 
-<img src="./Typora图片/image-20251027051707047.png" alt="image-20251027051707047" style="zoom: 33%;" />
+<img src="./assets/image-20251027051707047.png" alt="image-20251027051707047" style="zoom: 33%;" />
 
 
 
@@ -984,7 +984,7 @@ new Cesium.Cartesian2(x, y)
 
 new Cesium.Cartesian3(x, y, z)
 
-![微信图片_2025-10-27_051802_076](./Typora图片/微信图片_2025-10-27_051802_076.png)
+![微信图片_2025-10-27_051802_076](./assets/微信图片_2025-10-27_051802_076.png)
 
 
 
@@ -994,7 +994,7 @@ new Cesium.Cartesian3(x, y, z)
 
 地理坐标是用纬度、经度表示地面点位置的球面坐标
 
-<img src="./Typora图片/微信图片_2025-10-27_051847_889.jpg" alt="微信图片_2025-10-27_051847_889" style="zoom: 50%;" />
+<img src="./assets/微信图片_2025-10-27_051847_889.jpg" alt="微信图片_2025-10-27_051847_889" style="zoom: 50%;" />
 
 
 
@@ -1020,7 +1020,7 @@ new Cesium.Cartesian3(x, y, z)
   - y轴符合右手笛卡儿坐标系。
   - “x – y”平面与地球的[赤道面](https://zh.wikipedia.org/wiki/赤道面)重合
 
-<img src="./Typora图片/image-20260119080911490.png" alt="image-20260119080911490" style="zoom: 50%;" />
+<img src="./assets/image-20260119080911490.png" alt="image-20260119080911490" style="zoom: 50%;" />
 
 
 
@@ -1037,7 +1037,7 @@ cesium中任意一点使用的都是ECEF坐标系
   - Y 轴：赤道与东经 90° 交点方向
   - Z 轴：指向协议地极
 
-<img src="./Typora图片/image-20260119080650514.png" alt="image-20260119080650514" style="zoom: 50%;" />
+<img src="./assets/image-20260119080650514.png" alt="image-20260119080650514" style="zoom: 50%;" />
 
 
 
@@ -1194,7 +1194,7 @@ viewer.camera.flyTo({
 });
 ```
 
-![image-20260303154126504](./Typora图片/image-20260303154126504.png)
+![image-20260303154126504](./assets/image-20260303154126504.png)
 
 
 
@@ -1218,7 +1218,7 @@ viewer.camera.flyTo({
 
 地球椭球体有长半径和短半径之分，长半径(a)即赤道半径，短半径(b)即极半径。f=(a-b)la为椭球体的扁率，表示椭球体的扁平程度。
 
-<img src="./Typora图片/4.png" alt="4" style="zoom:67%;" />
+<img src="./assets/4.png" alt="4" style="zoom:67%;" />
 
 地球椭球体的形状和大小取决于a、b、f。因此，a、b、f被称为地球椭球体的三要素。
 
@@ -1262,7 +1262,7 @@ viewer.camera.flyTo({
 
 基于区域基准面定义的本地地理坐标系，如图所示：当前区域基准面（红色虚线）与左上部分地球表面最为贴合
 
-![5](./Typora图片/5.png)
+![5](./assets/5.png)
 
 
 
@@ -1288,7 +1288,7 @@ GCS + 投影算法 = PCS
 
 在地球椭球面和平面之间建立点与点之间函数关系的数学方法，称为地图投影。
 
-![6](./Typora图片/6.png)
+![6](./assets/6.png)
 
 地图投影的变形具体表现:
 
@@ -1296,7 +1296,7 @@ GCS + 投影算法 = PCS
 - 角度(形状)变形
 - 面积变形
 
-![7](./Typora图片/7.png)
+![7](./assets/7.png)
 
 等角投影:投影面上某点的任意两方向线夹角与椭球面上相应两线段夹角相等。
 等积投影:投影面与椭球面上相应区域的面积相等。
@@ -1313,11 +1313,11 @@ GCS + 投影算法 = PCS
 - 具有等角投影的性质;
 - 中央经线投影后保持长度不变，中央经线长度比为1。
 
-![8](./Typora图片/8.png)
+![8](./assets/8.png)
 
 假想有一个椭圆柱面横套在地球椭球体外面，并与某一条子午线(此子午线称为中央子午线或轴子午线)相切，椭圆柱的中心轴通过椭球体中心，然后用一定投影方法，将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱面展开即成为投影面。
 
-![9](./Typora图片/9.png)
+![9](./assets/9.png)
 
 
 
@@ -1329,7 +1329,7 @@ GCS + 投影算法 = PCS
 
 也就是经线（竖着的）是x轴，赤道（横着的）是y轴
 
-![10](./Typora图片/10.png)
+![10](./assets/10.png)
 
 
 
@@ -1337,7 +1337,7 @@ GCS + 投影算法 = PCS
 
 在我国小于1:50万的比例尺(1:100万) 一般采用Lambert或者Albers投影。 我国1:100万地形图采用Lambert投影(等角割圆锥投影)，我国大部分省份地图或者多数这一比例尺的的地图也多采用Lambert投影和属于同一投影系统的阿尔伯斯(Albers)投影(正轴等积割圆锥投影)。在处理1:100万、1:400万全国的数据时经常采用AIbers正轴等积割圆锥投影。
 
-![11](./Typora图片/11.png)
+![11](./assets/11.png)
 
 
 
@@ -1353,13 +1353,13 @@ GCS + 投影算法 = PCS
 - Y轴：前后方向，+Y向前，-Y向后(距离屏幕更近)
 - Z轴：上下方向，+Z向上，-Z向下
 
-![image-20260123164128112](./Typora图片/image-20260123164128112-1769211635948-10.png)
+![image-20260123164128112](./assets/image-20260123164128112-1769211635948-10.png)
 
 
 
 blender导出时会默认选择+Y向上,**这里我没有选择+Y向上导出**，避免对后面的测试产生影响，如果勾选+Y向上导出，模型会并不会自动旋转90度，可以理解为y轴和z轴互换了一下标签，我会在文章的最后说明
 
-![image-20260123164240115](./Typora图片/image-20260123164240115-1769211642452-12.png)
+![image-20260123164240115](./assets/image-20260123164240115-1769211642452-12.png)
 
 glTF标准：
 
@@ -1388,7 +1388,7 @@ GLTF 使用的是右手坐标系。GLTF 将 +Y 定义为向上方向，+Z 定义
 
 所以对于glTF，它会如此定义模型的方向
 
-![image-20260123164425400](./Typora图片/image-20260123164425400-1769211665302-14.png)
+![image-20260123164425400](./assets/image-20260123164425400-1769211665302-14.png)
 
 
 
@@ -1425,7 +1425,7 @@ model: {
   }
 ```
 
-![image-20260123164628250](./Typora图片/image-20260123164628250-1769211697932-16.png)
+![image-20260123164628250](./assets/image-20260123164628250-1769211697932-16.png)
 
 
 
@@ -1455,15 +1455,15 @@ ModelUtility.getAxisCorrectionMatrix = function (upAxis, forwardAxis, result) {
 
 航向角 heading 变化，确实绕着天轴转
 
-<img src="./Typora图片/image-20260123165916234-1769211839196-23.png" alt="image-20260123165916234" style="zoom:80%;" />
+<img src="./assets/image-20260123165916234-1769211839196-23.png" alt="image-20260123165916234" style="zoom:80%;" />
 
 俯仰角 pitch 变化，确实绕着右轴转（指北的轴）
 
-<img src="./Typora图片/image-20260123165533158-1769211803433-19.png" alt="image-20260123165533158" style="zoom:80%;" />
+<img src="./assets/image-20260123165533158-1769211803433-19.png" alt="image-20260123165533158" style="zoom:80%;" />
 
 横滚角 roll 变化，确实绕着前轴转（指东的轴）
 
-<img src="./Typora图片/image-20260123165715762-1769211816435-21.png" alt="image-20260123165715762" style="zoom:80%;" />
+<img src="./assets/image-20260123165715762-1769211816435-21.png" alt="image-20260123165715762" style="zoom:80%;" />
 
 
 
@@ -1498,17 +1498,17 @@ blender Y轴（+Y向前） -> Cesium ENU Z轴（+Z向上）
 
 在three editor中查看（gltf标准、blender还是three.js，都是蓝z，绿y，红x）
 
-![image-20260123170150787](./Typora图片/image-20260123170150787-1769211865519-25.png)
+![image-20260123170150787](./assets/image-20260123170150787-1769211865519-25.png)
 
 选择+Y向上，明显看出绿色y轴朝上
 
-![image-20260123170612088](./Typora图片/image-20260123170612088-1769211878865-29.png)
+![image-20260123170612088](./assets/image-20260123170612088-1769211878865-29.png)
 
 
 
 未选择+Y向上，明显看出蓝z向上
 
-![image-20260123170556086](./Typora图片/image-20260123170556086-1769211871951-27.png)
+![image-20260123170556086](./assets/image-20260123170556086-1769211871951-27.png)
 
 
 
@@ -1678,7 +1678,7 @@ viewer.entities.add({
 // 相机视锥体代码...
 ```
 
-![image-20260303150308020](./Typora图片/image-20260303150308020.png)
+![image-20260303150308020](./assets/image-20260303150308020.png)
 
 
 
@@ -1981,7 +1981,7 @@ cesium中看到的画面变化，大多是viewer.camera的变化
 - 朝向（heading/pitch/roll 或 direction/up）
 - 参考系：以相机位置为原点，建立一个"东北天（ENU）局部参考系"，heading/pitch/roll 是在这个ENU系里的旋转偏移量
 
-![image-20260326201049198](./Typora图片/image-20260326201049198.png)
+![image-20260326201049198](./assets/image-20260326201049198.png)
 
 
 
@@ -2022,7 +2022,7 @@ viewer.camera.positionWC 相机在**世界坐标系 (ECEF)** 中的真实位置
 
 而 `heading / pitch / roll` 是对同一姿态的**欧拉角表达**（相对于 相机位置 所在的 "东北天（ENU）局部参考系）：
 
-![image-20260318144617360](./Typora图片/image-20260318144617360.png)
+![image-20260318144617360](./assets/image-20260318144617360.png)
 
 ```
 heading（航向）：绕 初始 ENU 的 U（Up/天）轴旋转，正方向通常朝东增大。
@@ -2038,15 +2038,15 @@ roll（翻滚）：绕 初始 direction（视线轴）旋转，控制画面“�
 
 roll绕视线轴旋转
 
-<img src="./Typora图片/screenshots-1774527698926-3.gif" alt="screenshots" style="zoom: 67%;" />
+<img src="./assets/screenshots-1774527698926-3.gif" alt="screenshots" style="zoom: 67%;" />
 
 pitch绕E轴旋转
 
-<img src="./Typora图片/screenshots-1774527788348-5.gif" alt="screenshots" style="zoom:67%;" />
+<img src="./assets/screenshots-1774527788348-5.gif" alt="screenshots" style="zoom:67%;" />
 
 heading绕天轴旋转
 
-<img src="./Typora图片/screenshots-1774527942732-7.gif" alt="screenshots" style="zoom:67%;" />
+<img src="./assets/screenshots-1774527942732-7.gif" alt="screenshots" style="zoom:67%;" />
 
 
 
@@ -2062,7 +2062,7 @@ heading绕天轴旋转
 - β（章动角）是z-轴与Z-轴的夹角，
 - γ（自旋角）是交点线与X-轴的夹角。
 
-<img src="./Typora图片/Eulerangles.svg.png" alt="Eulerangles.svg" style="zoom:25%;" />
+<img src="./assets/Eulerangles.svg.png" alt="Eulerangles.svg" style="zoom:25%;" />
 
 
 
@@ -2080,7 +2080,7 @@ frustum.aspectRatio // 宽高比（通常跟 canvas 宽高一致）
 aspectRatio 默认值来自 canvas 的宽高比（viewer.scene.drawingBufferWidth / drawingBufferHeight），手动设置后会与实际渲染比例解耦，视锥体形状会变形，但这正好可以用于模拟非标准传感器。
 ```
 
-<img src="./Typora图片/视锥体.png" alt="视锥体" style="zoom: 67%;" />
+<img src="./assets/视锥体-1795574664450-1.png" alt="视锥体" style="zoom: 67%;" />
 
 
 
@@ -2204,7 +2204,7 @@ export function createCameraHud(viewer: Cesium.Viewer, options: CameraHudOptions
 // 使用：createCameraHud(viewer, { updateHz: 10, precision: 6, showVectors: true })
 ```
 
-![image-20260106211552596](./Typora图片/image-20260106211552596.png)
+![image-20260106211552596](./assets/image-20260106211552596.png)
 
 
 
@@ -2251,7 +2251,7 @@ viewer.camera.flyTo({
 
 黄线为视点和相机所处位置的连线
 
-![image-20260326210159244](./Typora图片/image-20260326210159244.png)
+![image-20260326210159244](./assets/image-20260326210159244.png)
 
 
 
@@ -2282,13 +2282,13 @@ new Cesium.HeadingPitchRange(heading, pitch, range)
 
 lookAt锁定目标效果
 
-<img src="./Typora图片/screenshots-1774581380939-1.gif" alt="screenshots" style="zoom:50%;" />
+<img src="./assets/screenshots-1774581380939-1.gif" alt="screenshots" style="zoom:50%;" />
 
 
 
 `lookAt(target, offset)`：Cesium **自动**以 `target` 点为原点，构造该点处的 **ENU 系**作为参考系,如下图，当三个偏移值几乎都为0时，相机位置几乎要和看向的目标点位置重合了
 
-![image-20260327110136765](./Typora图片/image-20260327110136765.png)
+![image-20260327110136765](./assets/image-20260327110136765.png)
 
 `lookAtTransform(transform, offset)`：可以**手动提供**一个任意的变换矩阵 `transform`（`Matrix4`）来定义参考系
 
@@ -2574,7 +2574,7 @@ point: {
 
 #### 回到具体观察
 
-![image-20260427095636797](./Typora图片/image-20260427095636797.png)
+![image-20260427095636797](./assets/image-20260427095636797.png)
 
 `BillboardGraphics | BillboardGraphics.ConstructorOptions`
 
@@ -2731,7 +2731,7 @@ const plane = viewer.entities.add({
 viewer.trackedEntity = plane
 ```
 
-<img src="./Typora图片/image-20260106223929737.png" alt="image-20260106223929737" style="zoom: 67%;" />
+<img src="./assets/image-20260106223929737.png" alt="image-20260106223929737" style="zoom: 67%;" />
 
 
 
@@ -2750,7 +2750,7 @@ viewer.trackedEntity = plane
 
 先看一个点，然后会解析其中可视性配置
 
-![微信图片_2026-01-23_074456_682](./Typora图片/微信图片_2026-01-23_074456_682.png)
+![微信图片_2026-01-23_074456_682](./assets/微信图片_2026-01-23_074456_682.png)
 
 代码：
 
@@ -2795,6 +2795,7 @@ const pointEntity = viewer.entities.add({
 <hr>
 
 
+
 #### pixelSize - 基础像素大小
 
 ```js
@@ -2813,6 +2814,7 @@ const pointEntity = viewer.entities.add({
 - 问题：远距离太小，近距离太大
 
 <hr>
+
 
 
 #### disableDepthTestDistance - 深度检测禁用
@@ -2838,6 +2840,7 @@ const pointEntity = viewer.entities.add({
 <hr>
 
 
+
 #### translucencyByDistance - 透明度渐变
 
 ```js
@@ -2860,6 +2863,7 @@ label: {
 <hr>
 
 
+
 ####  scaleByDistance - 大小渐变
 
 ```js
@@ -2880,6 +2884,7 @@ label: {
 ```
 
 <hr>
+
 
 
 #### Outline - 轮廓效果
@@ -2967,7 +2972,7 @@ diffuse和specular的指定值必须小于等于1
 
 图片对比，混合前对比混合后：
 
-<img src="./Typora图片/微信图片_2026-01-26_080309_653.png" alt="微信图片_2026-01-26_080309_653" style="zoom:50%;" /><img src="./Typora图片/微信图片_2026-01-26_080303_919.png" alt="微信图片_2026-01-26_080303_919" style="zoom:50%;" />
+<img src="./assets/微信图片_2026-01-26_080309_653.png" alt="微信图片_2026-01-26_080309_653" style="zoom:50%;" /><img src="./../../开发/Typora图片/微信图片_2026-01-26_080303_919.png" alt="微信图片_2026-01-26_080303_919" style="zoom:50%;" />
 
 
 
@@ -3138,7 +3143,7 @@ const box = viewer.entities.add({
 - 半透明材质 + 轮廓分离显示。
 - `DistanceDisplayCondition(near, far)`：控制可视距离范围，指定此框将在相机多远位置显示的属性，参数：可见区间最小距离和最大距离
 
-<img src="./Typora图片/image-20251103104022841.png" alt="image-20251103104022841" style="zoom:33%;" />
+<img src="./assets/image-20251103104022841.png" alt="image-20251103104022841" style="zoom:33%;" />
 
 
 
@@ -3170,7 +3175,7 @@ const cylinder = viewer.entities.add({
 - 挤压后形成“柱体”。
 - `heightReference.NONE`：绝对高度，不贴地。
 
-<img src="./Typora图片/image-20251103104949404.png" alt="image-20251103104949404" style="zoom:33%;" />
+<img src="./assets/image-20251103104949404.png" alt="image-20251103104949404" style="zoom:33%;" />
 
 
 
@@ -3202,7 +3207,7 @@ viewer.entities.add({
 - 按折线路径挤出形体（造管道、围栏、轨道）。
 - `cornerType.ROUNDED`：拐角圆滑过渡。
 
-<img src="./Typora图片/image-20251103105531671.png" alt="image-20251103105531671" style="zoom:33%;" />
+<img src="./assets/image-20251103105531671.png" alt="image-20251103105531671" style="zoom:33%;" />
 
 
 
@@ -3245,7 +3250,7 @@ viewer.entities.add({
 
 - `extrudedHeight` 形成“墙体 / 体块”。
 
-<img src="./Typora图片/image-20251103110657532.png" alt="image-20251103110657532" style="zoom:33%;" />
+<img src="./assets/image-20251103110657532.png" alt="image-20251103110657532" style="zoom:33%;" />
 
 
 
@@ -3317,7 +3322,7 @@ billboard: {
 - verticalOrigin/horizontalOrigin：确定“定位点”在图像的哪个位置：
   - TOP + CENTER：图像顶部对齐 position（常用于让图标“挂”在点上）。
   - 比如verticalOrigin
-  - ![image-20251103111327140](./Typora图片/image-20251103111327140.png)
+  - ![image-20251103111327140](./assets/image-20251103111327140.png)
 
 
 
@@ -3353,7 +3358,7 @@ point: {
 }
 ```
 
-<img src="./Typora图片/image-20251103111604528.png" alt="image-20251103111604528" style="zoom: 50%;" />
+<img src="./assets/image-20251103111604528.png" alt="image-20251103111604528" style="zoom: 50%;" />
 
 
 
@@ -3470,7 +3475,7 @@ dataSource.entities.values.forEach(e => {
 
 实现效果参考
 
-![screenshots](./Typora图片/screenshots.gif)
+![screenshots](./assets/screenshots.gif)
 
 
 
@@ -3898,7 +3903,7 @@ const plane = viewer.entities.add({
 viewer.trackedEntity = plane;
 ```
 
-<img src="./Typora图片/image-20260111203637080.png" alt="image-20260111203637080" style="zoom:50%;" />
+<img src="./assets/image-20260111203637080.png" alt="image-20260111203637080" style="zoom:50%;" />
 
 
 
@@ -3952,7 +3957,7 @@ viewer.entities.add({
 
 ```
 
-<img src="./Typora图片/GIF 2026-01-11 21-22-05.gif" alt="GIF 2026-01-11 21-22-05" style="zoom:50%;" />
+<img src="./assets/GIF 2026-01-11 21-22-05.gif" alt="GIF 2026-01-11 21-22-05" style="zoom:50%;" />
 
 
 
@@ -4265,7 +4270,7 @@ viewer.scene.primitives.add(
 
 ### primitive构成
 
-![image-20260113081108950](./Typora图片/image-20260113081108950.png)
+![image-20260113081108950](./assets/image-20260113081108950.png)
 
 
 
@@ -4308,7 +4313,7 @@ viewer.camera.setView({
 });
 ```
 
-![image-20260302205247662](./Typora图片/image-20260302205247662.png)
+![image-20260302205247662](./assets/image-20260302205247662.png)
 
 
 
@@ -4362,7 +4367,7 @@ viewer.camera.setView({
 })
 ```
 
-![image-20260302210122954](./Typora图片/image-20260302210122954.png)
+![image-20260302210122954](./assets/image-20260302210122954.png)
 
 
 
@@ -4411,7 +4416,7 @@ viewer.scene.primitives.add(new Cesium.Primitive({
 }))
 ```
 
-![image-20260202142915999](./Typora图片/image-20260202142915999.png)
+![image-20260202142915999](./assets/image-20260202142915999.png)
 
 
 
@@ -4504,7 +4509,7 @@ viewer.camera.setView({
 })
 ```
 
-![image-20260303095741925](./Typora图片/image-20260303095741925.png)
+![image-20260303095741925](./assets/image-20260303095741925.png)
 
 
 
@@ -4594,7 +4599,7 @@ viewer.scene.primitives.add(classificationPrimitive1);
 
 直观的看到模型被图元贴合，包括延伸到模型外部的钢铁支架，仅支架被包裹
 
-![image-20260303104235971](./Typora图片/image-20260303104235971.png)
+![image-20260303104235971](./assets/image-20260303104235971.png)
 
 参数：
 
@@ -4746,7 +4751,7 @@ viewer.camera.setView({
 })
 ```
 
-![image-20260303105746500](./Typora图片/image-20260303105746500.png)
+![image-20260303105746500](./assets/image-20260303105746500.png)
 
 
 
@@ -4778,7 +4783,7 @@ for (let i = 0; i < 100; i++) {
 }
 ```
 
-![image-20260202162649209](./Typora图片/image-20260202162649209.png)
+![image-20260202162649209](./assets/image-20260202162649209.png)
 
 
 
@@ -4791,7 +4796,7 @@ for (let i = 0; i < 100; i++) {
 画一个二维网格，每个网格单元里有实体的话就为占据状态（1），空的话就为（0）
 ```
 
-<img src="./Typora图片/image-20260202173351012.png" alt="image-20260202173351012" style="zoom:67%;" />
+<img src="./assets/image-20260202173351012.png" alt="image-20260202173351012" style="zoom:67%;" />
 
 ```
 而体素就是固定分辨率的三维栅格地图。
@@ -4799,9 +4804,9 @@ for (let i = 0; i < 100; i++) {
 体素网格是固定分辨率的，与之对应可变分辨率的网格叫八叉树地图(Octomap)。
 ```
 
-<img src="./Typora图片/image-20260202173828375.png" alt="image-20260202173828375" style="zoom:67%;" />
+<img src="./assets/image-20260202173828375.png" alt="image-20260202173828375" style="zoom:67%;" />
 
-<img src="./Typora图片/image-20260202173839928.png" alt="image-20260202173839928" style="zoom:67%;" />
+<img src="./assets/image-20260202173839928.png" alt="image-20260202173839928" style="zoom:67%;" />
 
 
 
@@ -5050,7 +5055,7 @@ const voxelPrimitive = viewer.scene.primitives.add(new Cesium.VoxelPrimitive({
 viewer.camera.flyToBoundingSphere(voxelPrimitive.boundingSphere, { duration: 0.2 });
 ```
 
-![image-20260202195959834](./Typora图片/image-20260202195959834.png)
+![image-20260202195959834](./assets/image-20260202195959834.png)
 
 
 
@@ -5058,7 +5063,7 @@ viewer.camera.flyToBoundingSphere(voxelPrimitive.boundingSphere, { duration: 0.2
 
 ##### 8×8×8 渐变体素
 
-<img src="./Typora图片/image-20260202202653577.png" alt="image-20260202202653577" style="zoom: 67%;" />
+<img src="./assets/image-20260202202653577.png" alt="image-20260202202653577" style="zoom: 67%;" />
 
 
 
@@ -5153,7 +5158,7 @@ const voxelPrimitive = viewer.scene.primitives.add(new Cesium.VoxelPrimitive({
 viewer.camera.flyToBoundingSphere(voxelPrimitive.boundingSphere, { duration: 2.0 });
 ```
 
-<img src="./Typora图片/image-20260202203715940.png" alt="image-20260202203715940" style="zoom:67%;" />
+<img src="./assets/image-20260202203715940.png" alt="image-20260202203715940" style="zoom:67%;" />
 
 
 
@@ -5264,9 +5269,9 @@ viewer.scene.postRender.addEventListener(function() {
 });
 ```
 
-<img src="./Typora图片/image-20260203104422984.png" alt="image-20260203104422984" style="zoom:33%;" />
+<img src="./assets/image-20260203104422984.png" alt="image-20260203104422984" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20260203104431100.png" alt="image-20260203104431100" style="zoom:33%;" />
+<img src="./assets/image-20260203104431100.png" alt="image-20260203104431100" style="zoom:33%;" />
 
 
 
@@ -5557,7 +5562,7 @@ gui.add(params, 'farPlane', 1000, 50000).name('远平面距离').onChange(value 
 
 
 
-![image-20260203114943564](./Typora图片/image-20260203114943564.png)
+![image-20260203114943564](./assets/image-20260203114943564.png)
 
 
 
@@ -5722,7 +5727,7 @@ z' = R31x + R32y + R33*z + Tz
 
 共有12种，并且每一种都有对应的边线模式的Geometry类型
 
-![primitive的geometry分类1](./Typora图片/primitive的geometry分类1.jpg)
+![primitive的geometry分类1](./assets/primitive的geometry分类1.jpg)
 
 #### 创建平面
 
@@ -5805,7 +5810,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive);
 ```
 
-![image-20260303155752042](./Typora图片/image-20260303155752042.png)
+![image-20260303155752042](./assets/image-20260303155752042.png)
 
 ```js
 new Cesium.Geometry(options)
@@ -5869,7 +5874,7 @@ viewer.camera.setView({
 })
 ```
 
-![image-20260303180255631](./Typora图片/image-20260303180255631.png)
+![image-20260303180255631](./assets/image-20260303180255631.png)
 
 
 
@@ -5913,7 +5918,7 @@ viewer.scene.primitives.add(
 );
 ```
 
-![image-20260304143806522](./Typora图片/image-20260304143806522.png)
+![image-20260304143806522](./assets/image-20260304143806522.png)
 
 
 
@@ -5926,7 +5931,7 @@ const circle = new Cesium.CircleGeometry({
 });
 ```
 
-![image-20260304143943313](./Typora图片/image-20260304143943313.png)
+![image-20260304143943313](./assets/image-20260304143943313.png)
 
 
 
@@ -5965,11 +5970,11 @@ viewer.scene.primitives.add(
 );
 ```
 
-![image-20260304145701773](./Typora图片/image-20260304145701773.png)
+![image-20260304145701773](./assets/image-20260304145701773.png)
 
 
 
-![image-20260304145944465](./Typora图片/image-20260304145944465.png)
+![image-20260304145944465](./assets/image-20260304145944465.png)
 
 
 
@@ -5984,7 +5989,7 @@ const geometry = new Cesium.CorridorGeometry({
 });
 ```
 
-![image-20260304150041383](./Typora图片/image-20260304150041383.png)
+![image-20260304150041383](./assets/image-20260304150041383.png)
 
 
 
@@ -6024,7 +6029,7 @@ viewer.scene.primitives.add(
 )
 ```
 
-![image-20260304151327552](./Typora图片/image-20260304151327552.png)
+![image-20260304151327552](./assets/image-20260304151327552.png)
 
 
 
@@ -6039,7 +6044,7 @@ const cylinder = new Cesium.CylinderGeometry({
 });
 ```
 
-![image-20260304151934987](./Typora图片/image-20260304151934987.png)
+![image-20260304151934987](./assets/image-20260304151934987.png)
 
 
 
@@ -6079,7 +6084,7 @@ viewer.scene.primitives.add(
 )
 ```
 
-![image-20260304153400650](./Typora图片/image-20260304153400650.png)
+![image-20260304153400650](./assets/image-20260304153400650.png)
 
 
 
@@ -6093,7 +6098,7 @@ const ellipse = new Cesium.EllipseGeometry({
 });
 ```
 
-![image-20260304153448053](./Typora图片/image-20260304153448053.png)
+![image-20260304153448053](./assets/image-20260304153448053.png)
 
 
 
@@ -6131,7 +6136,7 @@ viewer.scene.primitives.add(
 )
 ```
 
-![image-20260304154218043](./Typora图片/image-20260304154218043.png)
+![image-20260304154218043](./assets/image-20260304154218043.png)
 
 
 
@@ -6147,7 +6152,7 @@ const ellipsoid = new Cesium.EllipsoidGeometry({
 });
 ```
 
-![image-20260304154427768](./Typora图片/image-20260304154427768.png)
+![image-20260304154427768](./assets/image-20260304154427768.png)
 
 
 
@@ -6199,7 +6204,7 @@ viewer.scene.primitives.add(
 )
 ```
 
-![image-20260304163424344](./Typora图片/image-20260304163424344.png)
+![image-20260304163424344](./assets/image-20260304163424344.png)
 
 ```js
 // 创建一个矩形几何
@@ -6210,7 +6215,7 @@ const rectangle = new Cesium.RectangleGeometry({
 });
 ```
 
-![image-20260304163533167](./Typora图片/image-20260304163533167.png)
+![image-20260304163533167](./assets/image-20260304163533167.png)
 
 
 
@@ -6270,7 +6275,7 @@ new Cesium.PolygonHierarchy(positions, holes)
   一个 Cesium.PolygonHierarchy 对象，表示一个多边形的层次结构。
 ```
 
-![image-20260304171253691](./Typora图片/image-20260304171253691.png)
+![image-20260304171253691](./assets/image-20260304171253691.png)
 
 ```js
 const polygon = new Cesium.PolygonGeometry({
@@ -6281,7 +6286,7 @@ const polygon = new Cesium.PolygonGeometry({
 });
 ```
 
-![image-20260304171424325](./Typora图片/image-20260304171424325.png)
+![image-20260304171424325](./assets/image-20260304171424325.png)
 
 
 
@@ -6294,7 +6299,7 @@ const polygon = new Cesium.PolygonGeometry({
 });
 ```
 
-![image-20260304171608269](./Typora图片/image-20260304171608269.png)
+![image-20260304171608269](./assets/image-20260304171608269.png)
 
 
 
@@ -6309,7 +6314,7 @@ const polygon = new Cesium.PolygonGeometry({
 });
 ```
 
-![image-20260304171735629](./Typora图片/image-20260304171735629.png)
+![image-20260304171735629](./assets/image-20260304171735629.png)
 
 
 
@@ -6406,7 +6411,7 @@ const trianglePrimitive = new Cesium.Primitive({
 viewer.scene.primitives.add(trianglePrimitive);
 ```
 
-![微信图片_2026-01-14_215902_476](./Typora图片/微信图片_2026-01-14_215902_476.png)
+![微信图片_2026-01-14_215902_476](./assets/微信图片_2026-01-14_215902_476.png)
 
 
 
@@ -6456,7 +6461,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive)
 ```
 
-![image-20260305151051827](./Typora图片/image-20260305151051827.png)
+![image-20260305151051827](./assets/image-20260305151051827.png)
 
 ```js
 PolylineGometry支持传入顶点颜色，实现渐变样式。
@@ -6505,7 +6510,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive)
 ```
 
-![image-20260305160334608](./Typora图片/image-20260305160334608.png)
+![image-20260305160334608](./assets/image-20260305160334608.png)
 
 
 
@@ -6567,7 +6572,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive);
 ```
 
-![image-20260305161842522](./Typora图片/image-20260305161842522.png)
+![image-20260305161842522](./assets/image-20260305161842522.png)
 
 
 
@@ -6602,7 +6607,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive);
 ```
 
-![image-20260305162858948](./Typora图片/image-20260305162858948.png)
+![image-20260305162858948](./assets/image-20260305162858948.png)
 
 
 
@@ -6651,7 +6656,7 @@ viewer.camera.setView({
 })
 ```
 
-![image-20260305163914795](./Typora图片/image-20260305163914795.png)
+![image-20260305163914795](./assets/image-20260305163914795.png)
 
 #### Primitive自定义几何
 
@@ -6678,7 +6683,7 @@ options:
 
 按照在原点建模的方式，设四棱锥的中心点位于坐标原点，半径为1，对每个点进行标号，那么此时可以得出下图的结果：
 
-![image-20260203145728714](./Typora图片/image-20260203145728714.png)
+![image-20260203145728714](./assets/image-20260203145728714.png)
 
 
 
@@ -6775,7 +6780,7 @@ viewer.camera.flyTo({
 });
 ```
 
-![image-20260203145915949](./Typora图片/image-20260203145915949.png)
+![image-20260203145915949](./assets/image-20260203145915949.png)
 
 
 
@@ -6911,11 +6916,11 @@ viewer.camera.flyTo({
 });
 ```
 
-![image-20260203153842199](./Typora图片/image-20260203153842199.png)
+![image-20260203153842199](./assets/image-20260203153842199.png)
 
 法线也可以按照如图原理手动计算：计算一个三角形的法线n，即为这个三角形内a向量与b向量的叉乘
 
-![image-20260203153650825](./Typora图片/image-20260203153650825.png)
+![image-20260203153650825](./assets/image-20260203153650825.png)
 
 
 
@@ -7041,7 +7046,7 @@ viewer.scene.primitives.add(normalDebugPrimitive);
 
 
 
-<img src="./Typora图片/image-20260203160647445.png" alt="image-20260203160647445" style="zoom:67%;" />
+<img src="./assets/image-20260203160647445.png" alt="image-20260203160647445" style="zoom:67%;" />
 
 
 
@@ -7082,7 +7087,7 @@ new Cesium.EllipsoidSurfaceAppearance(options)
 new Cesium.PerInstanceColorAppearance(options)
 ```
 
-![image-20260305195842262](./Typora图片/image-20260305195842262.png)
+![image-20260305195842262](./assets/image-20260305195842262.png)
 
 
 
@@ -7091,7 +7096,7 @@ PolylineMaterialAppearance：专门用于线的材质外观，支持传入materi
 new Cesium.PolylineMaterialAppearance(options)
 ```
 
-![image-20260305200910348](./Typora图片/image-20260305200910348.png)
+![image-20260305200910348](./assets/image-20260305200910348.png)
 
 
 
@@ -7102,7 +7107,7 @@ PolylineGometry支持根据顶点颜色进行着色，需要结合该类。
 new Cesium.PolylineColorAppearance(options)
 ```
 
-![image-20260305160334608](./Typora图片/image-20260305160334608.png)
+![image-20260305160334608](./assets/image-20260305160334608.png)
 
 
 
@@ -7230,7 +7235,7 @@ polygon.material = new Cesium.Material({
 });
 ```
 
-![image-20260127192217450](./Typora图片/image-20260127192217450.png)
+![image-20260127192217450](./assets/image-20260127192217450.png)
 
 
 
@@ -7261,7 +7266,7 @@ const material1 = new Cesium.Material({
 });
 ```
 
-<img src="./Typora图片/image-20260127192734859.png" alt="image-20260127192734859" style="zoom:50%;" />
+<img src="./assets/image-20260127192734859.png" alt="image-20260127192734859" style="zoom:50%;" />
 
 ###### 光照相关
 
@@ -7292,7 +7297,7 @@ PolylineGlow	发光线条
 PolylineOutline	带边框的线条
 ```
 
-<img src="./Typora图片/image-20260127193401279.png" alt="image-20260127193401279" style="zoom: 67%;" />
+<img src="./assets/image-20260127193401279.png" alt="image-20260127193401279" style="zoom: 67%;" />
 
 ###### 水、边缘光照
 
@@ -7315,7 +7320,7 @@ const material1 = new Cesium.Material({
 });
 ```
 
-![image-20260127193501678](./Typora图片/image-20260127193501678.png)
+![image-20260127193501678](./assets/image-20260127193501678.png)
 
 
 
@@ -7543,7 +7548,7 @@ vec3(1.0) 是 GLSL 的向量构造函数
 表示 RGB 三个通道都是最大值（白色）
 ```
 
-<img src="./Typora图片/image-20260127203520939.png" alt="image-20260127203520939" style="zoom: 50%;" />
+<img src="./assets/image-20260127203520939.png" alt="image-20260127203520939" style="zoom: 50%;" />
 
 
 
@@ -7709,13 +7714,13 @@ fabric: {
 }
 ```
 
-![image-20260306100216120](./Typora图片/image-20260306100216120.png)
+![image-20260306100216120](./assets/image-20260306100216120.png)
 
 
 
 一定要开启背面剔除，对于自定义材质，cesium没法根据透明度自动进行背面剔除，否则会形成下面的效果
 
-![image-20260306100504859](./Typora图片/image-20260306100504859.png)
+![image-20260306100504859](./assets/image-20260306100504859.png)
 
 
 
@@ -7738,7 +7743,7 @@ const material1 = new Cesium.Material({
 
 效果：
 
-<img src="./Typora图片/image-20260128103153685.png" alt="image-20260128103153685" style="zoom:50%;" />
+<img src="./assets/image-20260128103153685.png" alt="image-20260128103153685" style="zoom:50%;" />
 
 ```
 左下角 = 黑蓝 (0, 0, 0.5)
@@ -7794,7 +7799,7 @@ const sourceMaterial = new Cesium.Material({
 czm_getDefaultMaterial() 返回默认材质（全黑，不透明）
 ```
 
-<img src="./Typora图片/image-20260127204211522.png" alt="image-20260127204211522" style="zoom:67%;" />
+<img src="./assets/image-20260127204211522.png" alt="image-20260127204211522" style="zoom:67%;" />
 
 
 
@@ -7984,7 +7989,7 @@ const primitive = new Cesium.Primitive({
 viewer.scene.primitives.add(primitive);
 ```
 
-![image-20260306114109192](./Typora图片/image-20260306114109192.png)
+![image-20260306114109192](./assets/image-20260306114109192.png)
 
 
 
@@ -8022,7 +8027,7 @@ const appearance1 = new Cesium.MaterialAppearance({
 })
 ```
 
-![image-20260306114512516](./Typora图片/image-20260306114512516.png)
+![image-20260306114512516](./assets/image-20260306114512516.png)
 
 
 
@@ -9399,19 +9404,19 @@ await viewer.dataSources.add(dataSource);
 
 现有模型
 
-![image-20260127104220958](./Typora图片/image-20260127104220958.png)
+![image-20260127104220958](./assets/image-20260127104220958.png)
 
 模型命名
 
-![image-20260127104236406](./Typora图片/image-20260127104236406.png)
+![image-20260127104236406](./assets/image-20260127104236406.png)
 
 这样打开gltf文件，里面的json代码会显示
 
-![image-20260127104258440](./Typora图片/image-20260127104258440.png)
+![image-20260127104258440](./assets/image-20260127104258440.png)
 
 导出设置为gltf嵌入式
 
-![image-20260127104307822](./Typora图片/image-20260127104307822.png)
+![image-20260127104307822](./assets/image-20260127104307822.png)
 
 
 
@@ -9435,7 +9440,7 @@ await viewer.dataSources.add(dataSource);
    - 声明当前文件使用的扩展
    - 告知加载器需要什么支持
 
-![image-20260127104609234](./Typora图片/image-20260127104609234.png)
+![image-20260127104609234](./assets/image-20260127104609234.png)
 
 ```json
 {
@@ -9634,7 +9639,7 @@ await viewer.dataSources.add(dataSource);
 
 vscode中打> 符号搜索下面这个选项
 
-![image-20260127104704950](./Typora图片/image-20260127104704950.png)
+![image-20260127104704950](./assets/image-20260127104704950.png)
 
 会自动为节点注入对应的动作，gltf文件中会多出这一部分
 
@@ -9732,23 +9737,23 @@ vscode中打> 符号搜索下面这个选项
 
 
 
-![image-20260127104738940](./Typora图片/image-20260127104738940.png)
+![image-20260127104738940](./assets/image-20260127104738940.png)
 
 
 
 会发现gltf中插入的stages和预览场景中的变换调整窗口上的参数对应上了
 
-![image-20260127104758638](./Typora图片/image-20260127104758638.png)
+![image-20260127104758638](./assets/image-20260127104758638.png)
 
 
 
 此时模型的参考系发生了变化（y轴指向up导出）
 
-![image-20260127104837573](./Typora图片/image-20260127104837573.png)
+![image-20260127104837573](./assets/image-20260127104837573.png)
 
 原本
 
-![image-20260127104844304](./Typora图片/image-20260127104844304.png)
+![image-20260127104844304](./assets/image-20260127104844304.png)
 
 
 
@@ -10195,11 +10200,11 @@ PBR 模式：
 
 自发光
 
-<img src="./Typora图片/image-20260129161057989.png" alt="image-20260129161057989" style="zoom: 67%;" />
+<img src="./assets/image-20260129161057989.png" alt="image-20260129161057989" style="zoom: 67%;" />
 
 左侧反射高光
 
-<img src="./Typora图片/image-20260129161144616.png" alt="image-20260129161144616" style="zoom:67%;" />
+<img src="./assets/image-20260129161144616.png" alt="image-20260129161144616" style="zoom:67%;" />
 
 
 
@@ -10250,7 +10255,7 @@ const shader = new Cesium.CustomShader({
 });
 ```
 
-![image-20260129164202986](./Typora图片/image-20260129164202986.png)
+![image-20260129164202986](./assets/image-20260129164202986.png)
 
 
 
@@ -10434,7 +10439,7 @@ const varyingShader = new Cesium.CustomShader({
 });
 ```
 
-<img src="./Typora图片/image-20260129172422014.png" alt="image-20260129172422014" style="zoom: 80%;" />
+<img src="./assets/image-20260129172422014.png" alt="image-20260129172422014" style="zoom: 80%;" />
 
 
 
@@ -10533,7 +10538,7 @@ const shader = new Cesium.CustomShader({
 })
 ```
 
-<img src="./Typora图片/image-20260129145043533.png" alt="image-20260129145043533" style="zoom:50%;" />
+<img src="./assets/image-20260129145043533.png" alt="image-20260129145043533" style="zoom:50%;" />
 
 
 
@@ -10573,7 +10578,7 @@ const shader = new Cesium.CustomShader({
 });
 ```
 
-![image-20260129150828390](./Typora图片/image-20260129150828390.png)
+![image-20260129150828390](./assets/image-20260129150828390.png)
 
 
 
@@ -10641,7 +10646,7 @@ const shader4 = new Cesium.CustomShader({
 });
 ```
 
-![image-20260129154110326](./Typora图片/image-20260129154110326.png)<img src="./Typora图片/image-20260129154129018.png" alt="image-20260129154129018" style="zoom:80%;" />
+![image-20260129154110326](./assets/image-20260129154110326.png)<img src="./assets/image-20260129154129018.png" alt="image-20260129154129018" style="zoom:80%;" />
 
 
 
@@ -10678,7 +10683,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   viewer.imageryLayers.addImageryProvider(tianditu)
 ```
 
-<img src="./Typora图片/image-20260202095429906.png" alt="image-20260202095429906" style="zoom:50%;" />
+<img src="./assets/image-20260202095429906.png" alt="image-20260202095429906" style="zoom:50%;" />
 
 
 
@@ -11232,7 +11237,7 @@ viewer.timeline?.zoomTo(clock.startTime, clock.stopTime);
 
 当前时间是2026-01-11，17：51，北京时间比UTC早8个小时，所以时间轴上显示9：51，这里显示5倍速，时间范围是10s，控制器左边的绿色箭头亮起表示在推进
 
-![image-20260111175142422](./Typora图片/image-20260111175142422.png)
+![image-20260111175142422](./assets/image-20260111175142422.png)
 
 
 
@@ -11376,6 +11381,7 @@ Viewer 的默认渲染循环会在每一帧自动调用 viewer.clock.tick()，�
 ```
 
 - `button.click`：用户点击按钮触发事件
+
 - clock.onTick：每次 clock.tick 执行完成后触发事件，tick是方法（行为），onTick是事件（通知）
 
 - **`tick()`：每帧都会被调用（在 Viewer 默认渲染循环里）**
@@ -11783,7 +11789,7 @@ viewer.scene.globe.enableLighting = true;
 - 给地球背太阳一侧添加阴影
 - 阴影随时间/太阳位置动态变化
 
-<img src="./Typora图片/微信图片_2026-01-26_075850_837.png" alt="微信图片_2026-01-26_075850_837" style="zoom:50%;" />
+<img src="./assets/微信图片_2026-01-26_075850_837.png" alt="微信图片_2026-01-26_075850_837" style="zoom:50%;" />
 
 
 
@@ -12026,11 +12032,11 @@ viewer.scene.postProcessStages.bloom.enabled = true; //  开启
 
 开启对比未开启，开启后朝向光源一侧变的很亮
 
-<img src="./Typora图片/image-20260126160412416.png" alt="image-20260126160412416" style="zoom:50%;" />
+<img src="./assets/image-20260126160412416.png" alt="image-20260126160412416" style="zoom:50%;" />
 
 关闭之后右侧没有那么亮了
 
-<img src="./Typora图片/image-20260126160505213.png" alt="image-20260126160505213" style="zoom:50%;" />
+<img src="./assets/image-20260126160505213.png" alt="image-20260126160505213" style="zoom:50%;" />
 
 
 
@@ -12045,15 +12051,15 @@ viewer.scene.postProcessStages.bloom.uniforms.contrast = 128;
 
 255 
 
-<img src="./Typora图片/image-20260126162104959.png" alt="image-20260126162104959" style="zoom:33%;" />
+<img src="./assets/image-20260126162104959.png" alt="image-20260126162104959" style="zoom:33%;" />
 
 0
 
-<img src="./Typora图片/image-20260126162125064.png" alt="image-20260126162125064" style="zoom:33%;" />
+<img src="./assets/image-20260126162125064.png" alt="image-20260126162125064" style="zoom:33%;" />
 
 -128
 
-<img src="./Typora图片/image-20260126162220974.png" alt="image-20260126162220974" style="zoom:33%;" />
+<img src="./assets/image-20260126162220974.png" alt="image-20260126162220974" style="zoom:33%;" />
 
 
 
@@ -12083,15 +12089,15 @@ B (Brightness) = 亮度（0-100%）      颜色明暗程度
 
 -0.3
 
-<img src="./Typora图片/image-20260126163352384.png" alt="image-20260126163352384" style="zoom:33%;" />
+<img src="./assets/image-20260126163352384.png" alt="image-20260126163352384" style="zoom:33%;" />
 
 0.1
 
-<img src="./Typora图片/image-20260126163411852.png" alt="image-20260126163411852" style="zoom:33%;" />
+<img src="./assets/image-20260126163411852.png" alt="image-20260126163411852" style="zoom:33%;" />
 
 0.4
 
-<img src="./Typora图片/image-20260126163437499.png" alt="image-20260126163437499" style="zoom:33%;" />
+<img src="./assets/image-20260126163437499.png" alt="image-20260126163437499" style="zoom:33%;" />
 
 
 
@@ -12126,11 +12132,11 @@ viewer.scene.postProcessStages.bloom.uniforms.glowOnly = false;
 
 true
 
-<img src="./Typora图片/image-20260126163935648.png" alt="image-20260126163935648" style="zoom:33%;" />
+<img src="./assets/image-20260126163935648.png" alt="image-20260126163935648" style="zoom:33%;" />
 
 false
 
-<img src="./Typora图片/image-20260126163952421.png" alt="image-20260126163952421" style="zoom:33%;" />
+<img src="./assets/image-20260126163952421.png" alt="image-20260126163952421" style="zoom:33%;" />
 
 
 
@@ -12158,15 +12164,15 @@ viewer.scene.postProcessStages.bloom.uniforms.delta = 1.0; // 模糊程度
 
 0
 
-<img src="./Typora图片/image-20260126165409341.png" alt="image-20260126165409341" style="zoom:33%;" />
+<img src="./assets/image-20260126165409341.png" alt="image-20260126165409341" style="zoom:33%;" />
 
 1
 
-<img src="./Typora图片/image-20260126165433693.png" alt="image-20260126165433693" style="zoom:33%;" />
+<img src="./assets/image-20260126165433693.png" alt="image-20260126165433693" style="zoom:33%;" />
 
 10
 
-<img src="./Typora图片/image-20260126165452389.png" alt="image-20260126165452389" style="zoom:33%;" />
+<img src="./assets/image-20260126165452389.png" alt="image-20260126165452389" style="zoom:33%;" />
 
 ------
 
@@ -12179,15 +12185,15 @@ viewer.scene.postProcessStages.bloom.uniforms.sigma = 2.0; // 高斯模糊标准
 
 0.1
 
-<img src="./Typora图片/image-20260126170053881.png" alt="image-20260126170053881" style="zoom:33%;" />
+<img src="./assets/image-20260126170053881.png" alt="image-20260126170053881" style="zoom:33%;" />
 
 4
 
-<img src="./Typora图片/image-20260126170134161.png" alt="image-20260126170134161" style="zoom:33%;" />
+<img src="./assets/image-20260126170134161.png" alt="image-20260126170134161" style="zoom:33%;" />
 
 10
 
-<img src="./Typora图片/image-20260126170148402.png" alt="image-20260126170148402" style="zoom:33%;" />
+<img src="./assets/image-20260126170148402.png" alt="image-20260126170148402" style="zoom:33%;" />
 
 
 
@@ -12202,17 +12208,17 @@ viewer.scene.postProcessStages.bloom.uniforms.stepSize = 1.0; // 采样步长
 
 0
 
-<img src="./Typora图片/image-20260126171009762.png" alt="image-20260126171009762" style="zoom:50%;" />
+<img src="./assets/image-20260126171009762.png" alt="image-20260126171009762" style="zoom:50%;" />
 
 4
 
-<img src="./Typora图片/image-20260126171038698.png" alt="image-20260126171038698" style="zoom:50%;" />
+<img src="./assets/image-20260126171038698.png" alt="image-20260126171038698" style="zoom:50%;" />
 
 10  有重影
 
-<img src="./Typora图片/image-20260126171101455.png" alt="image-20260126171101455" style="zoom:50%;" />
+<img src="./assets/image-20260126171101455.png" alt="image-20260126171101455" style="zoom:50%;" />
 
-![image-20260126171124440](./Typora图片/image-20260126171124440.png)
+![image-20260126171124440](./assets/image-20260126171124440.png)
 
 可视化（采样过程）：
 
@@ -12246,7 +12252,7 @@ viewer.scene.postProcessStages.bloom.uniforms. stepSize = 1.0; // 采样精度
 
 通过在物体交接处和细节内部添加柔和的阴影，让模型看起来不再是“浮”在空中或表面，而是稳固地“接触”着。
 
-<img src="./Typora图片/image-20260121171059597.png" alt="image-20260121171059597" style="zoom:50%;" />
+<img src="./assets/image-20260121171059597.png" alt="image-20260121171059597" style="zoom:50%;" />
 
 
 
@@ -12312,31 +12318,31 @@ depthOfField.uniforms.stepSize = 1.0; // 采样步长
 
 是否开启景深的效果对比，未开启和开启对比，开启后明显变模糊了
 
-<img src="./Typora图片/image-20260126193719843.png" alt="image-20260126193719843" style="zoom:33%;" />
+<img src="./assets/image-20260126193719843.png" alt="image-20260126193719843" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20260126193744644.png" alt="image-20260126193744644" style="zoom:33%;" />
+<img src="./assets/image-20260126193744644.png" alt="image-20260126193744644" style="zoom:33%;" />
 
 采样步长对比（stepSize）：越小越清晰，越大越模糊（模糊半径变大了），
 
 0.1
 
-<img src="./Typora图片/image-20260126194001538.png" alt="image-20260126194001538" style="zoom:33%;" />
+<img src="./assets/image-20260126194001538.png" alt="image-20260126194001538" style="zoom:33%;" />
 
 2
 
-<img src="./Typora图片/image-20260126194030458.png" alt="image-20260126194030458" style="zoom:33%;" />
+<img src="./assets/image-20260126194030458.png" alt="image-20260126194030458" style="zoom:33%;" />
 
 10
 
-<img src="./Typora图片/image-20260126194050127.png" alt="image-20260126194050127" style="zoom:33%;" />
+<img src="./assets/image-20260126194050127.png" alt="image-20260126194050127" style="zoom:33%;" />
 
 
 
 delta和delta，越大越黑，越小越亮
 
-<img src="./Typora图片/image-20260126194609135.png" alt="image-20260126194609135" style="zoom:33%;" />
+<img src="./assets/image-20260126194609135.png" alt="image-20260126194609135" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20260126194627929.png" alt="image-20260126194627929" style="zoom:33%;" />
+<img src="./assets/image-20260126194627929.png" alt="image-20260126194627929" style="zoom:33%;" />
 
 
 
@@ -12351,23 +12357,23 @@ blackAndWhite.uniforms.gradations = 5.0; // 灰度级别，默认5
 
 开启和未开启对比
 
-<img src="./Typora图片/image-20260126203538105.png" alt="image-20260126203538105" style="zoom:33%;" />
+<img src="./assets/image-20260126203538105.png" alt="image-20260126203538105" style="zoom:33%;" />
 
-<img src="./Typora图片/image-20260126203555694.png" alt="image-20260126203555694" style="zoom:33%;" />
+<img src="./assets/image-20260126203555694.png" alt="image-20260126203555694" style="zoom:33%;" />
 
 灰度级别  细节越来越丰富，颜色过度也越来越顺滑
 
 5
 
-<img src="./Typora图片/image-20260126203555694.png" alt="image-20260126203555694" style="zoom:33%;" />
+<img src="./assets/image-20260126203555694.png" alt="image-20260126203555694" style="zoom:33%;" />
 
 20
 
-<img src="./Typora图片/image-20260126203717541.png" alt="image-20260126203717541" style="zoom:33%;" />
+<img src="./assets/image-20260126203717541.png" alt="image-20260126203717541" style="zoom:33%;" />
 
 255
 
-<img src="./Typora图片/image-20260126203738402.png" alt="image-20260126203738402" style="zoom:33%;" />
+<img src="./assets/image-20260126203738402.png" alt="image-20260126203738402" style="zoom:33%;" />
 
 
 
@@ -12390,15 +12396,15 @@ brightness.uniforms.brightness = 1; // 这个值越大，亮度越高
 
 0.3
 
-<img src="./Typora图片/image-20260126204247584.png" alt="image-20260126204247584" style="zoom:33%;" />
+<img src="./assets/image-20260126204247584.png" alt="image-20260126204247584" style="zoom:33%;" />
 
 1
 
-<img src="./Typora图片/image-20260126204316749.png" alt="image-20260126204316749" style="zoom:33%;" />
+<img src="./assets/image-20260126204316749.png" alt="image-20260126204316749" style="zoom:33%;" />
 
 3
 
-<img src="./Typora图片/image-20260126204339008.png" alt="image-20260126204339008" style="zoom:33%;" />
+<img src="./assets/image-20260126204339008.png" alt="image-20260126204339008" style="zoom:33%;" />
 
 
 
@@ -12432,7 +12438,7 @@ const nightVision = viewer.scene.postProcessStages.add(Cesium.PostProcessStageLi
 // 模拟夜视仪的视觉效果
 ```
 
-<img src="./Typora图片/image-20260126204651687.png" alt="image-20260126204651687" style="zoom:33%;" />
+<img src="./assets/image-20260126204651687.png" alt="image-20260126204651687" style="zoom:33%;" />
 
 
 
@@ -12444,9 +12450,9 @@ viewer.scene.highDynamicRange = true;
 
 未开启与开启对比
 
-<img src="./Typora图片/image-20260126205620192.png" alt="image-20260126205620192" style="zoom: 50%;" />
+<img src="./assets/image-20260126205620192.png" alt="image-20260126205620192" style="zoom: 50%;" />
 
-<img src="./Typora图片/image-20260126205649604.png" alt="image-20260126205649604" style="zoom:50%;" />
+<img src="./assets/image-20260126205649604.png" alt="image-20260126205649604" style="zoom:50%;" />
 
 ```
 传统渲染（LDR - Low Dynamic Range）：
@@ -12527,7 +12533,7 @@ JS + GLSL 合作
    - 把这段 GLSL 代码编译成 WebGL 着色器。
    - 自动把当前场景渲染好的颜色纹理，绑定到 `colorTexture` 这个 uniform 上。
    - 自动提供 `v_textureCoordinates`（屏幕 UV 坐标）等变量。
-3.  shader 就是对每个像素（片元）做同样的操作：
+3. shader 就是对每个像素（片元）做同样的操作：
    - 读入 `colorTexture` → 得到原始颜色；
    - `color.rgb * scale + offset` → 提亮 + 加偏色；
    - 输出到 `fragColor` → 作为新的画面。
@@ -12699,6 +12705,7 @@ Cesium 中深度值的完整转换链：
 
 <hr>
 
+
 ### 内部shader实现
 
 “天空变成青色”效果：
@@ -12731,6 +12738,7 @@ stages.add(customStage);
 - 再乘上 `scale = 1.1`，整体亮度提升 10%。
 
 <hr>
+
 
 屏幕闪烁效果
 
@@ -12780,6 +12788,7 @@ stages.add(stageBlink);
 - 后半秒（`iTime > 0.5`）：乘以 `brightness`（比如 2.0 → 变亮）。
 
 <hr>
+
 
 雨水效果
 
@@ -13031,7 +13040,7 @@ void main() {
 
 
 
-<img src="./Typora图片/image-20251124211833555.png" alt="image-20251124211833555" style="zoom:33%;" />
+<img src="./assets/image-20251124211833555.png" alt="image-20251124211833555" style="zoom:33%;" />
 
 
 
@@ -13061,7 +13070,7 @@ void main() {
 
 
 
-<img src="./Typora图片/image-20251124212045739.png" alt="image-20251124212045739" style="zoom:50%;" />
+<img src="./assets/image-20251124212045739.png" alt="image-20251124212045739" style="zoom:50%;" />
 
 
 
@@ -13082,12 +13091,13 @@ void main() {
    - `fragColor = vec4(blended, col.a)`
 
 注意两个 mix 的含义不同：
+
 - calFogRate 里的 mix：在“起始雾浓度 & 结束雾浓度”之间插值 → 得到一个标量 fogRate
 - main 里的 mix：在“原场景颜色 & 雾颜色”之间插值 → 得到最终颜色
 
 
 
-<img src="./Typora图片/image-20251124214142925.png" alt="image-20251124214142925" style="zoom:50%;" />
+<img src="./assets/image-20251124214142925.png" alt="image-20251124214142925" style="zoom:50%;" />
 
 
 
@@ -13120,7 +13130,7 @@ void main() {
 
 下图中获取了7个采样点
 
-![image-20260226110735272](./Typora图片/image-20260226110735272.png)
+![image-20260226110735272](./assets/image-20260226110735272.png)
 
 
 
@@ -13134,13 +13144,13 @@ void main() {
 
 该点的深度为（1 + 1 + 1 + 0 + 0 + 0 + 0 + 0）/ 8 = 0.375。
 
-![image-20260226110831696](./Typora图片/image-20260226110831696.png)
+![image-20260226110831696](./assets/image-20260226110831696.png)
 
 在某点向光源方向做8次步进，前5次在云的内部，后3次在云的外部。
 
 该点的深度为（1 + 1 + 1 + 1 + 1 + 0 + 0 + 0）/ 8 = 0.625。
 
-![image-20260226110911448](./Typora图片/image-20260226110911448.png)
+![image-20260226110911448](./assets/image-20260226110911448.png)
 
 深度越大，接收到的光能越少。
 
@@ -13150,7 +13160,7 @@ void main() {
 
 在现实中，光在传递过程中会发生折射，反射，衍射等现象，涉及到的物理公式比较多。而在游戏中，我们追求的是以更低的计算量得到让人信服的效果，所以这里我选择不使用公式，用一条曲线来控制衰减。
 
-![image-20260226111058593](./Typora图片/image-20260226111058593.png)
+![image-20260226111058593](./assets/image-20260226111058593.png)
 
 
 
@@ -13160,7 +13170,7 @@ void main() {
 
 这个步进过程和计算云密度的步进过程是对称的，所以可以用当前点的云密度估算反射比例。
 
-![image-20260226111436246](./Typora图片/image-20260226111436246.png)
+![image-20260226111436246](./assets/image-20260226111436246.png)
 
 
 
@@ -13168,7 +13178,7 @@ void main() {
 
 对于局部的体积云，一般使用一个Box来表示云的范围，为了提高程序性能，光线步进一般只在该Box中进行，所以对于每条光线，首先需要获取其在Box上的起点和终点。
 
-![image-20260226115548040](./Typora图片/image-20260226115548040.png)
+![image-20260226115548040](./assets/image-20260226115548040.png)
 
 ```
 光线：从点 P 出发，方向为向量 d
@@ -13202,11 +13212,11 @@ $$
 
 前面实现的体积云是局部的，即将云的渲染范围限定在一个指定的Box内，也就是光线步进的范围限定在Box内，而要实现全球体积云，需要根据地球的形状设置体积云的渲染范围，因为地球是一个椭圆，所以体积云的渲染范围是一个球壳
 
-<img src="./Typora图片/image-20260226192324308.png" alt="image-20260226192324308" style="zoom:67%;" />
+<img src="./assets/image-20260226192324308.png" alt="image-20260226192324308" style="zoom:67%;" />
 
 限定体积云的渲染范围，即为限定光线步进的范围，所以只需要将上一节的光线步进范围从Box换到球壳，一个球壳其实就是两个不同半径的球所组成的，大球减去小球即为球壳范围。求取光线步进的范围，即是求取光线步进的起点和终点（参考rayBoxDst）方法，在球壳中求光线步进的起点和终点，其实就是通过求射线与球的交点来实现的，这分为多种情况
 
-![image-20260226192836499](./Typora图片/image-20260226192836499.png)
+![image-20260226192836499](./assets/image-20260226192836499.png)
 
 
 
@@ -13220,7 +13230,7 @@ Cesium将底层与WebGL交互的操作封装到了一个渲染模块，也可以
 
 Cesium渲染器源码位于packages/engine/Source/Renderer目录下：
 
-![image-20260203174551207](./Typora图片/image-20260203174551207.png)
+![image-20260203174551207](./assets/image-20260203174551207.png)
 
 ```
 一、Cesium的渲染器会涉及到很多WebGL的概念
@@ -13314,7 +13324,7 @@ Cesium内置了一个小型的GLSL库，里面定义了一些方法、结构体�
 
 四棱锥建模效果如图
 
-![image-20260203195857068](./Typora图片/image-20260203195857068.png)
+![image-20260203195857068](./assets/image-20260203195857068.png)
 
 
 
@@ -13626,7 +13636,7 @@ viewer.camera.setView({
 
 
 
-![image-20260203205713703](./Typora图片/image-20260203205713703.png)
+![image-20260203205713703](./assets/image-20260203205713703.png)
 
 
 
@@ -13767,7 +13777,7 @@ const normalDebugPrimitive = Cesium.createTangentSpaceDebugPrimitive({
 viewer.scene.primitives.add(normalDebugPrimitive);
 ```
 
-![image-20260204111301395](./Typora图片/image-20260204111301395.png)
+![image-20260204111301395](./assets/image-20260204111301395.png)
 
 
 
@@ -14083,7 +14093,7 @@ new Cesium.Viewer()是Cesium一切的起点，从该构造函数开始，看看C
 打开构造函数function Viewer(...) {...}
 ```
 
-![image-20260209094702529](./Typora图片/image-20260209094702529.png)
+![image-20260209094702529](./assets/image-20260209094702529.png)
 
 
 
@@ -14183,7 +14193,7 @@ new Cesium.Viewer()是Cesium一切的起点，从该构造函数开始，看看C
 
 打开CesiumWidget.js源码:
 
-![image-20260209095440458](./Typora图片/image-20260209095440458.png)
+![image-20260209095440458](./assets/image-20260209095440458.png)
 
 `CesiumWidget`这个类中创建了scene对象
 
@@ -14422,7 +14432,7 @@ CesiumWidget.prototype.render = function () {
 
 #### 流程图谱
 
-![LoRA vLLM RAG Pipeline-2026-02-09-085707](./Typora图片/LoRA vLLM RAG Pipeline-2026-02-09-085707.png)
+![LoRA vLLM RAG Pipeline-2026-02-09-085707](./assets/LoRA vLLM RAG Pipeline-2026-02-09-085707.png)
 
 
 
@@ -14432,7 +14442,7 @@ CesiumWidget.prototype.render = function () {
 
 打开Scene.js源码:
 
-![image-20260209110715681](./Typora图片/image-20260209110715681.png)
+![image-20260209110715681](./assets/image-20260209110715681.png)
 
 ```js
 Scene类构造函数中的重要初始化操作，
@@ -15105,7 +15115,7 @@ flowchart TD
   M --> Z4["viewport 其它步骤汇总：compute/shadow/pickDepth/selectedId 等辅助路径"]
 ```
 
-<img src="./Typora图片/LoRA vLLM RAG Pipeline-2026-02-10-020721.png" alt="LoRA vLLM RAG Pipeline-2026-02-10-020721" style="zoom: 25%;" />
+<img src="./assets/LoRA vLLM RAG Pipeline-2026-02-10-020721.png" alt="LoRA vLLM RAG Pipeline-2026-02-10-020721" style="zoom: 25%;" />
 
 
 
@@ -15121,14 +15131,13 @@ flowchart TD
 在帧缓冲区中进行绘制的过程又称为离屏绘制。
 ```
 
-![image-20260228172904155](./Typora图片/image-20260228172904155.png)
+![image-20260228172904155](./assets/image-20260228172904155.png)
 
 ```
-
 Cesium是基于WebGL封装的，所以Cesium的离屏渲染也就是WebGL的离屏渲染，即通过帧缓冲区对象来实现，webgl中通过gl.createFramebuffer()来创建帧缓冲区对象，Cesium的渲染模块将对原生webgl的帧缓冲区相关的操作封装到了FrameBuffer类中。
 ```
 
-![image-20260228171931577](./Typora图片/image-20260228171931577.png)
+![image-20260228171931577](./assets/image-20260228171931577.png)
 
 
 
